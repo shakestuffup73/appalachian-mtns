@@ -1,12 +1,28 @@
-import createError from 'http-errors'
+// import npm packages
+import 'dotenv/config.js'
 import express from 'express'
 import path from 'path'
 import { fileURLToPath } from 'url'
+import createError from 'http-errors'
+import session from 'express-session'
 import logger from 'morgan'
+import methodOverride from 'method-override'
+import passport from 'passport'
+
+// import custom middleware
+import { passDataToView } from './middleware/middleware.js'
+
+// connect to MongoDB with mongoose
+import './config/database.js'
+
+// load passport
+import'./config/passport.js'
 
 // import routers
 import { router as indexRouter } from './routes/index.js'
-import { router as usersRouter } from './routes/users.js'
+import { router as authRouter } from './routes/auth.js'
+import { router as profilesRouter } from './routes/profiles.js'
+import { router as mtnsRouter } from './routes/mtns.js'
 
 // set up app
 const app = express()
@@ -18,19 +34,42 @@ app.set(
 )
 app.set('view engine', 'ejs')
 
-// middleware
+// basic middleware
+app.use(methodOverride('_method'))
 app.use(logger('dev'))
 app.use(express.json())
-app.use(express.urlencoded({ extended: false }))
+app.use(express.urlencoded({ extended: true }))
 app.use(
   express.static(
     path.join(path.dirname(fileURLToPath(import.meta.url)), 'public')
   )
 )
 
+// session middleware
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      sameSite: 'lax',
+    },
+  })
+)
+
+// passport middleware
+app.use(passport.initialize())
+app.use(passport.session())
+
+// custom middleware
+app.use(passDataToView)
+
 // mounted routers
 app.use('/', indexRouter)
-app.use('/users', usersRouter)
+app.use('/auth', authRouter)
+app.use('/profiles', profilesRouter)
+app.use('/mtns', mtnsRouter)
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -45,9 +84,11 @@ app.use(function (err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500)
-  res.render('error')
+  res.render('error', {
+    title: `🎊 ${err.status || 500} Error`,
+    user: req.user ? req.user : null,
+    googleClientID: process.env.GOOGLE_CLIENT_ID,
+  })
 })
 
-export {
-  app
-}
+export { app }
