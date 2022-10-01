@@ -22,7 +22,7 @@ import'./config/passport.js'
 import { router as indexRouter } from './routes/index.js'
 import { router as authRouter } from './routes/auth.js'
 import { router as profilesRouter } from './routes/profiles.js'
-import { router as mtnsRouter } from './routes/mtns.js'
+import { router as climbsRouter } from './routes/climbs.js'
 
 // set up app
 const app = express()
@@ -68,7 +68,7 @@ app.use(passDataToView)
 app.use('/', indexRouter)
 app.use('/auth', authRouter)
 app.use('/profiles', profilesRouter)
-app.use('/mtns', mtnsRouter)
+app.use('/climbs', climbsRouter)
 
 
 // catch 404 and forward to error handler

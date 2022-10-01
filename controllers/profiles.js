@@ -1,4 +1,5 @@
 import { Profile } from '../models/profile.js'
+import { Climb } from '../models/climb.js'
 
 function index(req, res) {
   Profile.find({})

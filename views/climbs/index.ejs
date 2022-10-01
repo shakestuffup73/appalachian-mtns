@@ -1,0 +1,28 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+
+<h1> This is the ice climbs index page (shows all climbs) </h1>
+
+<form id="add-climb-to-list" action="/climbs" method="POST">
+  <select name="climb" id="climb-select">
+  
+  <button type="submit">Add a Climb</button>
+</form>
+
+<table id="climb-table">
+  <tbody>
+    <% climbs.forEach(mtn => { %>
+      <tr>
+        <td><%= climb.name %></td>
+        <td><%= climb.elevation %></td>
+        <td><%= climb.date %> </td>
+      </tr>
+    <% }) %> 
+  </tbody>
+</table>
+
+
+
+<%- include('../partials/footer') %>

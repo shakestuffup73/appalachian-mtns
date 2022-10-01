@@ -9,18 +9,22 @@ const commentSchema = new Schema ({
   timestamps: true,
 })
 
-const mtnSchema = new Schema({
+const climbSchema = new Schema({
   name: String,
   date: Date,
+  mountain: String,
   elevation: Number,
+  grade: {
+    type: String,
+    match: /[WI][1-6]\d?/
+  },
   comments: [commentSchema],
-  owner: {type: Schema.Types.ObjectId, ref: "Profile"}
 }, {
   timestamps: true
 })
 
-const Mtn = mongoose.model('Mtn', mtnSchema)
+const Climb = mongoose.model('Climb', climbSchema)
 
 export {
-  Mtn
+  Climb
 }
