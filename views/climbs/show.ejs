@@ -8,10 +8,11 @@
   <div>Grade: <%= climb.grade %></div>
   <div>Location: <%= climb.location %></div>
   <div>Date Climbed: <%= climb.date %></div>
-  <div>Submitted By: <%= climb.owner.name %> </div>
+  <div>Submitted By:  </div>
   <div>Climb Reviews:</div>
 
   <div>
+    <% if (user.profile._id.equals(climb.owner._id)) { %>
     <form 
     action="/climbs/<%= climb._id %>/reviews"
     method = "POST"
@@ -22,13 +23,14 @@
       <button type="submit" id="add-review-btn">Add Review</button>
     </div>
     </form>
+  <% } %> 
   </div>
+  
   <% if (climb.reviews.length) { %>
     <table id="climb-reviews">
       <thead>
         <tr>
           <th>Review</th>
-          <th>Climber</th>
         </tr>
       </thead>
       <tbody>

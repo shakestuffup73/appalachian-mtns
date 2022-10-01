@@ -21,7 +21,6 @@ function show (req, res) {
   .then(profile => {
     const isSelf = profile._id.equals(req.user.profile._id)
     res.render('profiles/show', {
-      title: `${profile.name}'s mountain list`,
       isSelf,
       profile,
     })

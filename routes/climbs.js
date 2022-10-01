@@ -12,12 +12,14 @@ router.get('/:id', isLoggedIn, climbsCtrl.show)
 router.post('/', climbsCtrl.create)
 router.post('/:id/reviews', climbsCtrl.createReview)
 
+/* DELETE */
+router.delete('/:id', isLoggedIn, climbsCtrl.delete)
+
 
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) return next()
   res.redirect('/')
 }
-
 
 export {
   router

@@ -1,4 +1,5 @@
 import { Climb } from '../models/climb.js'
+import { Profile } from '../models/profile.js'
 
 function index (req, res) {
   Climb.find({})
@@ -31,6 +32,8 @@ function newClimb(req, res) {
 }
 
 function create (req, res) {
+  req.body.owner = req.user.profile._id
+  console.log('this is req.body', req.body)
   console.log('this is the create climb function')
   Climb.create(req.body)
   .then(climb => {
@@ -49,7 +52,7 @@ function show (req, res) {
     console.log('Climb data:', climb)
     res.render('climbs/show', {
       title: 'Climb Details',
-      climb: climb,
+      climb: climb,   
     })
   })
   .catch(error => {
@@ -79,11 +82,16 @@ function createReview (req, res) {
   })
 }
 
+function deleteReview (req, res) {
+  console.log('This is the delete review function!')
+}
+
 export {
   index,
   newClimb as new,
   create,
   show,
   createReview,
+  deleteReview as delete,
 }
 
