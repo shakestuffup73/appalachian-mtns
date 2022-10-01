@@ -12,7 +12,7 @@ const commentSchema = new Schema ({
 const climbSchema = new Schema({
   name: String,
   date: Date,
-  mountain: String,
+  location: String,
   elevation: Number,
   grade: {
     type: String,

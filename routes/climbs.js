@@ -6,10 +6,10 @@ const router = Router()
 /* GET climbs listing. */
 router.get('/', isLoggedIn, climbsCtrl.index)
 router.get('/new', isLoggedIn, climbsCtrl.new)
+router.get('/:id', isLoggedIn, climbsCtrl.show)
 
 /* POST climbs */
 router.post('/', climbsCtrl.create)
-router.post('/', climbsCtrl.addToList)
 
 
 function isLoggedIn(req, res, next) {

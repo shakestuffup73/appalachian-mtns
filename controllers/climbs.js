@@ -41,16 +41,26 @@ function create (req, res) {
   })
 }
 
-function addToList (req, res) {
-  console.log('this is the add to list function!')
+function show (req, res) {
+  console.log('this is the climb details show function!')
+  Climb.findById(req.params.id)
+  .then (climb => {
+    res.render('climbs/show', {
+      title: 'Climb Details',
+      climb: climb,
+    })
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/')
+  })
 }
-
 
 
 export {
   index,
   newClimb as new,
   create,
-  addToList,
+  show,
 }
 
