@@ -1,0 +1,35 @@
+<%- include('../partials/html-head') %>
+
+<%- include('../partials/nav') %>
+
+<main>
+  <div id="add-mtn">
+  <h1>
+    <%= title %>
+  </h1>
+  <br>
+  <form id="add-mtn-to-list" action="/mtns" method="POST">
+    <select name="mountain" id="mountain-select">
+    <% mtns.forEach(mtn => { %>
+      <option><%= mtn.name %></option>
+    <% }) %>
+  </select>
+  </form>
+
+<div id="add-mtn">
+  <h1>Not seeing your mountain in the drop-down? Add it to the list here!</h1>
+</div>
+  <form id="add-mtn-form" action="/mtns" method="POST">
+    <label for="mtn-name">Mountain:</label>
+    <input type="text" name="name" id="mtn-input">
+    <label for="mtn-elevation">Elevation:</label>
+    <input type="text" name="elevation" id="mtn-elevation">
+    <label for="mtn-date">Date Hiked:</label>
+    <input type="text" name="date" id="mtn-date">
+    <button type="submit">Add New Mountain</button>
+  </form>
+</main>
+
+
+
+<%- include("../partials/footer") %>

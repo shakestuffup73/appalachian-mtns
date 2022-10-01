@@ -1,24 +1,51 @@
 import { Mtn } from '../models/mtn.js'
 
-
-function index(req, res) {
+function index (req, res) {
   Mtn.find({})
   .then(mtns => {
-    res.render('mtns/index', {
-      mtns,
-      title: "NH4K 48"
+    res.render('mtns', {
+      title: 'All Mountains',
+      mtns: mtns,
     })
   })
-  .catch(err => {
-    console.log(err)
-    res.redirect('/')
+  .catch(error => {
+    console.log(error)
+    res.redirect('/mtns')
+  })
+}
+
+function newMtn(req, res) {
+  console.log('newMtn function responding!')
+  Mtn.find({})
+  .then(mtns => {
+    res.render('mtns/new', {
+      title: 'Add Mountain',
+      mtns: mtns,
+    })
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/mtns')
+  })
+}
+
+function create (req, res) {
+  console.log('this is the create mountain function')
+  Mtn.create(req.body)
+  .then(mtn => {
+    console.log('this is the mountain being created', mtn)
+    res.redirect('/mtns/new')
+  })
+  .catch (error => {
+    res.redirect('/mtns/new')
   })
 }
 
 
 
-
 export {
   index,
+  newMtn as new,
+  create,
 }
 

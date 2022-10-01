@@ -1,7 +1,17 @@
 import { Profile } from '../models/profile.js'
 
 function index(req, res) {
-console.log('This is the profile index function')
+  Profile.find({})
+  .then(profiles => {
+    res.render("profiles/index", {
+      profiles,
+      title: "All Hikers"
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
 }
 
 export {

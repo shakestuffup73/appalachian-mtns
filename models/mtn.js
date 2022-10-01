@@ -11,6 +11,7 @@ const commentSchema = new Schema ({
 
 const mtnSchema = new Schema({
   name: String,
+  date: Date,
   elevation: Number,
   comments: [commentSchema],
   owner: {type: Schema.Types.ObjectId, ref: "Profile"}
