@@ -13,7 +13,7 @@ router.post('/', climbsCtrl.create)
 router.post('/:id/reviews', climbsCtrl.createReview)
 
 /* DELETE */
-router.delete('/:id', isLoggedIn, climbsCtrl.delete)
+router.delete('/:climbId/reviews/:reviewId', isLoggedIn, climbsCtrl.delete)
 
 
 function isLoggedIn(req, res, next) {

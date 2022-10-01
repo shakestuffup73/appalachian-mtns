@@ -84,6 +84,22 @@ function createReview (req, res) {
 
 function deleteReview (req, res) {
   console.log('This is the delete review function!')
+  Climb.findById(req.params.climbId)
+  .then (climb => {
+    climb.reviews.id(req.params.reviewId).remove()
+    climb.save()
+    .then(() => {
+      res.redirect(`/climbs/${climb._id}`)
+    })
+    .catch (error => {
+      console.log(error)
+      res.redirect('/')
+    })
+  })
+  .catch (error => {
+    console.log(error)
+    res.redirect('/')
+  })
 }
 
 export {
