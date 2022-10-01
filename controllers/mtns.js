@@ -25,7 +25,7 @@ function newMtn(req, res) {
   })
   .catch(error => {
     console.log(error)
-    res.redirect('/mtns')
+    res.redirect('/mtns/new')
   })
 }
 
@@ -41,11 +41,16 @@ function create (req, res) {
   })
 }
 
+function addToList (req, res) {
+  console.log('this is the add to list function!')
+}
+
 
 
 export {
   index,
   newMtn as new,
   create,
+  addToList,
 }
 

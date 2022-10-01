@@ -14,6 +14,27 @@ function index(req, res) {
   })
 }
 
+function show (req, res) {
+  console.log('this is the show profile function!')
+  Profile.findById(req.params.id)
+  .then(profile => {
+    const isSelf = profile._id.equals(req.user.profile._id)
+    res.render('profiles/show', {
+      title: `${profile.name}'s mountain list`,
+      isSelf,
+      profile,
+    })
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/profiles')
+  })
+}
+
+
+
+
 export {
   index,
+  show,
 }

@@ -13,13 +13,13 @@
     <% mtns.forEach(mtn => { %>
       <option><%= mtn.name %></option>
     <% }) %>
-  </select>
+    </select>
   </form>
 
 <div id="add-mtn">
   <h1>Not seeing your mountain in the drop-down? Add it to the list here!</h1>
 </div>
-  <form id="add-mtn-form" action="/mtns" method="POST">
+  <form id="add-mtn-to-dropdown-form" action="/mtns" method="POST">
     <label for="mtn-name">Mountain:</label>
     <input type="text" name="name" id="mtn-input">
     <label for="mtn-elevation">Elevation:</label>
