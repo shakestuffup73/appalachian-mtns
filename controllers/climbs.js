@@ -48,11 +48,12 @@ function create (req, res) {
 function show (req, res) {
   console.log('this is the climb details show function!')
   Climb.findById(req.params.id)
+  .populate({path: 'reviews', select: 'reviewer'})
   .then (climb => {
     console.log('Climb data:', climb)
     res.render('climbs/show', {
       title: 'Climb Details',
-      climb: climb,   
+      climb: climb,
     })
   })
   .catch(error => {
