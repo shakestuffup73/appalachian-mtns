@@ -7,7 +7,6 @@ const Schema = mongoose.Schema
 const profileSchema = new Schema({
   name: String,
   avatar: String,
-  myClimbs: { type: mongoose.Schema.Types.ObjectId, ref: 'Climb' }
 }, {
   timestamps: true
 })

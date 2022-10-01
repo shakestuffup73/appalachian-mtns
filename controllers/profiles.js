@@ -6,7 +6,7 @@ function index(req, res) {
   .then(profiles => {
     res.render("profiles/index", {
       profiles,
-      title: "All Hikers"
+      title: "All Climbers"
     })
   })
   .catch(err => {
@@ -31,8 +31,6 @@ function show (req, res) {
     res.redirect('/profiles')
   })
 }
-
-
 
 
 export {

@@ -16,6 +16,7 @@ function index (req, res) {
 
 function newClimb(req, res) {
   console.log('newClimb function responding!')
+  req.body.owner = req.user.profile
   Climb.find({})
   .then(climbs => {
     res.render('climbs/new', {
@@ -45,6 +46,7 @@ function show (req, res) {
   console.log('this is the climb details show function!')
   Climb.findById(req.params.id)
   .then (climb => {
+    console.log('Climb data:', climb)
     res.render('climbs/show', {
       title: 'Climb Details',
       climb: climb,
@@ -56,11 +58,32 @@ function show (req, res) {
   })
 }
 
+function createReview (req, res) {
+  console.log('this is the create review function!')
+  console.log(req.body)
+  Climb.findById(req.params.id)
+  .then (climb => {
+    climb.reviews.push(req.body)
+    climb.save()
+    .then(() => {
+      res.redirect(`/climbs/${climb._id}`)  
+    })
+    .catch(error => {
+      console.log(error)
+      res.redirect('/')
+    })
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/')
+  })
+}
 
 export {
   index,
   newClimb as new,
   create,
   show,
+  createReview,
 }
 

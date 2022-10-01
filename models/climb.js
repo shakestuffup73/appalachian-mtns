@@ -2,9 +2,9 @@ import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema
 
-const commentSchema = new Schema ({
+const reviewSchema = new Schema ({
   content: String,
-  author: {type: Schema.Types.ObjectId, ref: "Profile"},
+  reviewer: {type: Schema.Types.ObjectId, ref: "Profile"},
 }, {
   timestamps: true,
 })
@@ -18,7 +18,8 @@ const climbSchema = new Schema({
     type: String,
     match: /[WI][1-6]\d?/
   },
-  comments: [commentSchema],
+  owner: {type: mongoose.Schema.Types.ObjectId, ref: 'Profile'},
+  reviews: [reviewSchema],
 }, {
   timestamps: true
 })

@@ -3,6 +3,49 @@
 
 <h1> This is the details page for each climb </h1>
 
+<section id="climbDetail">
+  <div>Climb: <%= climb.name %></div>
+  <div>Grade: <%= climb.grade %></div>
+  <div>Location: <%= climb.location %></div>
+  <div>Date Climbed: <%= climb.date %></div>
+  <div>Submitted By: <%= climb.owner.name %> </div>
+  <div>Climb Reviews:</div>
+
+  <div>
+    <form 
+    action="/climbs/<%= climb._id %>/reviews"
+    method = "POST"
+    >
+    <div id="add-review-div">
+      <label for="review-box">Your Review:</label>
+      <input name="content" type="text">
+      <button type="submit" id="add-review-btn">Add Review</button>
+    </div>
+    </form>
+  </div>
+  <% if (climb.reviews.length) { %>
+    <table id="climb-reviews">
+      <thead>
+        <tr>
+          <th>Review</th>
+          <th>Climber</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% climb.reviews.forEach(review => { %>
+          <tr>
+            <%= review.content %> 
+          </tr>
+        <% }) %>
+    </table>
+    <% } else { %>
+    <div id="noReviews">
+      <h3>No Reviews On This Climb Yet</h3>
+    </div>
+    <% } %>
+  <ul>
+  </ul>
+  </section>
 
 
 <%- include("../partials/footer") %>

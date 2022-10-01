@@ -10,6 +10,7 @@ router.get('/:id', isLoggedIn, climbsCtrl.show)
 
 /* POST climbs */
 router.post('/', climbsCtrl.create)
+router.post('/:id/reviews', climbsCtrl.createReview)
 
 
 function isLoggedIn(req, res, next) {
