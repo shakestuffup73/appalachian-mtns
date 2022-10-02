@@ -16,13 +16,13 @@
 
 <div>
   <form 
-  action="/climbs/<%= climb._id %>/reviews"
-  method = "PATCH"
+  action="/climbs/<%= climb._id %>/reviews/<%= review._id %>?_method=PUT"
+  method = "POST"
   >
   <div id="add-review-div">
     <label for="review-box">Your Review:</label>
     <input name="content" value="<%= review.content %>" type="text">
-    <button type="submit" id="add-review-btn">Add Review</button>
+    <button type="submit" id="add-review-btn">Update Review</button>
   </div>
   </form>
 </div>

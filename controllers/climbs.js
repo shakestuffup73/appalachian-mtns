@@ -48,9 +48,20 @@ function create (req, res) {
 function show (req, res) {
   console.log('this is the climb details show function!')
   Climb.findById(req.params.id)
-  .populate({ path: 'reviews', select: 'reviewer'})
+  .populate({ 
+    path: 'reviews', 
+    select: 'reviewer',
+    populate: {
+      path: 'reviewer',
+      select: 'name'
+    }
+  })
+  
   .then (climb => {
+    const thisReview = climb.reviews.id(req.params.reviewId)
+    console.log('this is the review:', thisReview)
     console.log('Climb data:', climb)
+
     res.render('climbs/show', {
       title: 'Climb Details',
       climb: climb,
@@ -66,7 +77,8 @@ function createReview (req, res) {
   console.log('this is the create review function!')
   req.body.reviewer = req.user.profile._id
   console.log(req.body)
-  Climb.findById(req.params.id)  .then (climb => {
+  Climb.findById(req.params.id)  
+  .then (climb => {
     climb.reviews.push(req.body)
     climb.save()
     .then(() => {
@@ -110,11 +122,9 @@ function editReview (req, res) {
   .then (climb => {
 
     const thisReview = climb.reviews.id(req.params.reviewId)
-
-    console.log('this is the review to edit:', thisReview)
-    console.log('this is the reviewer:', thisReview.reviewer)
-    console.log('this is the current user:', req.user.profile._id )
-
+    // console.log('this is the review to edit:', thisReview)
+    // console.log('this is the reviewer:', thisReview.reviewer)
+    // console.log('this is the current user:', req.user.profile._id )
     res.render('climbs/edit', {
       review: thisReview,
       climb,
@@ -127,23 +137,22 @@ function editReview (req, res) {
 }
 
 function updateReview (req, res) {
-  console.log('this is the update review function')
-  req.body.reviewer = req.user.profile._id
-  console.log(req.body)
-  Climb.findById(req.params.id)  .then (climb => {
-    climb.reviews.push(req.body)
-    climb.save()
-    .then(() => {
-      res.redirect(`/climbs/${climb._id}`)  
-    })
-    .catch(error => {
-      console.log(error)
-      res.redirect('/')
+  Climb.findById(req.params.climbId)
+  .then (climb => {
+
+  const thisReview = climb.reviews.id(req.params.reviewId)
+    // console.log('this is the review to edit:', thisReview)
+    // console.log('this is the reviewer:', thisReview.reviewer)
+    // console.log('this is the current user:', req.user.profile._id )
+    thisReview.push(req.body)
+    thisReview.save()
+    .then (updatedReview => {
+      res.redirect(`/climbs/${climb._id}`)
     })
   })
-  .catch(error => {
-    console.log(error)
-    res.redirect('/')
+  .catch(err => {
+    console.log(err)
+    res.redirect(`/climbs`)
   })
 }
 
@@ -158,4 +167,3 @@ export {
   editReview,
   updateReview,
 }
-

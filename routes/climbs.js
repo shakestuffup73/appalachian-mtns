@@ -13,9 +13,9 @@ router.get('/:climbId/reviews/:reviewId/edit', isLoggedIn, climbsCtrl.editReview
 router.post('/', climbsCtrl.create)
 router.post('/:id/reviews', climbsCtrl.createReview)
 
-/* PATCH review on climb */
+/* PUT review update on climb */
 
-router.patch('/:id/reviews', climbsCtrl.updateReview)
+router.put('/:climbId/reviews/:reviewId', climbsCtrl.updateReview)
 
 /* DELETE */
 router.delete('/:climbId/reviews/:reviewId', isLoggedIn, climbsCtrl.delete)
