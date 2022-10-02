@@ -58,8 +58,6 @@ function show (req, res) {
   })
   
   .then (climb => {
-    const thisReview = climb.reviews.id(req.params.reviewId)
-    console.log('this is the review:', thisReview)
     console.log('Climb data:', climb)
 
     res.render('climbs/show', {
