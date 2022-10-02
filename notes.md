@@ -47,3 +47,15 @@
       <option value="Wildcat-D">Wildcat-D</option>
       <option value="Willey">Willey</option>
       <option value="Zealand">Zealand</option>
+
+
+      <% if (user.profile._id.equals(climb.owner._id)) { %>
+        <form action="/climbs/<%= climb._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
+          <button type="submit">Delete Review</button>
+        </form>
+      <% } %>
+      <% if (user.profile._id.equals(review.reviewer._id)) { %>
+        <a href="/climbs/<%= climb._id %>/reviews/<%= review._id %>/edit">
+          <button id="edit-btn">Edit Review</button>
+        </a>
+      <% } %>

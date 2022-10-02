@@ -32,11 +32,16 @@
             <br> 
           </tr>
           <br>
-      <% if (user.profile._id.equals(climb.owner._id)) { %>
-        <form action="/climbs/<%= climb._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
-          <button type="submit">Delete Review</button>
-        </form>
-      <% } %>
+          <% if (user.profile._id.equals(climb.owner._id) || user.profile._id.equals(review.reviewer._id)) { %>
+            <form action="/climbs/<%= climb._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
+              <button type="submit">Delete Review</button>
+            </form>
+          <% } %>
+          <% if (user.profile._id.equals(review.reviewer._id)) { %>
+            <a href="/climbs/<%= climb._id %>/reviews/<%= review._id %>/edit">
+              <button id="edit-btn">Edit Review</button>
+            </a>
+          <% } %>  
     <% }) %> 
     </table>
     <% } else { %>

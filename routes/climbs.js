@@ -7,10 +7,15 @@ const router = Router()
 router.get('/', climbsCtrl.index)
 router.get('/new', isLoggedIn, climbsCtrl.new)
 router.get('/:id', isLoggedIn, climbsCtrl.show)
+router.get('/:climbId/reviews/:reviewId/edit', isLoggedIn, climbsCtrl.editReview)
 
 /* POST climbs */
 router.post('/', climbsCtrl.create)
 router.post('/:id/reviews', climbsCtrl.createReview)
+
+/* PATCH review on climb */
+
+router.patch('/:id/reviews', climbsCtrl.updateReview)
 
 /* DELETE */
 router.delete('/:climbId/reviews/:reviewId', isLoggedIn, climbsCtrl.delete)

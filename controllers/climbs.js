@@ -48,7 +48,7 @@ function create (req, res) {
 function show (req, res) {
   console.log('this is the climb details show function!')
   Climb.findById(req.params.id)
-  .populate({path: 'reviews', select: 'reviewer'})
+  .populate({ path: 'reviews', select: 'reviewer'})
   .then (climb => {
     console.log('Climb data:', climb)
     res.render('climbs/show', {
@@ -64,9 +64,9 @@ function show (req, res) {
 
 function createReview (req, res) {
   console.log('this is the create review function!')
+  req.body.reviewer = req.user.profile._id
   console.log(req.body)
-  Climb.findById(req.params.id)
-  .then (climb => {
+  Climb.findById(req.params.id)  .then (climb => {
     climb.reviews.push(req.body)
     climb.save()
     .then(() => {
@@ -103,6 +103,51 @@ function deleteReview (req, res) {
   })
 }
 
+function editReview (req, res) {
+  console.log('this is the edit review function')
+  Climb.findById(req.params.climbId)
+
+  .then (climb => {
+
+    const thisReview = climb.reviews.id(req.params.reviewId)
+
+    console.log('this is the review to edit:', thisReview)
+    console.log('this is the reviewer:', thisReview.reviewer)
+    console.log('this is the current user:', req.user.profile._id )
+
+    res.render('climbs/edit', {
+      review: thisReview,
+      climb,
+    })
+  })
+  .catch (error => {
+    console.log(error)
+    res.redirect('/')
+  })
+}
+
+function updateReview (req, res) {
+  console.log('this is the update review function')
+  req.body.reviewer = req.user.profile._id
+  console.log(req.body)
+  Climb.findById(req.params.id)  .then (climb => {
+    climb.reviews.push(req.body)
+    climb.save()
+    .then(() => {
+      res.redirect(`/climbs/${climb._id}`)  
+    })
+    .catch(error => {
+      console.log(error)
+      res.redirect('/')
+    })
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/')
+  })
+}
+
+
 export {
   index,
   newClimb as new,
@@ -110,5 +155,7 @@ export {
   show,
   createReview,
   deleteReview as delete,
+  editReview,
+  updateReview,
 }
 

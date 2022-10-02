@@ -1,0 +1,31 @@
+<%- include('../partials/html-head') %>
+
+<%- include('../partials/nav') %>
+
+
+<h1>This is the edit page for review</h1>
+
+<h1> This is the details page for each climb </h1>
+
+<section id="climbDetail">
+  <div>Climb: <%= climb.name %></div>
+  <div>Grade: <%= climb.grade %></div>
+  <div>Location: <%= climb.location %></div>
+  <div>Date Climbed: <%= climb.date %></div>
+  <div>Submitted By:  </div>
+
+<div>
+  <form 
+  action="/climbs/<%= climb._id %>/reviews"
+  method = "PATCH"
+  >
+  <div id="add-review-div">
+    <label for="review-box">Your Review:</label>
+    <input name="content" value="<%= review.content %>" type="text">
+    <button type="submit" id="add-review-btn">Add Review</button>
+  </div>
+  </form>
+</div>
+
+
+<%- include("../partials/footer") %>
