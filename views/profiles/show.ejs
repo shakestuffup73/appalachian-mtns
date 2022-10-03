@@ -8,14 +8,24 @@
 <% if (isSelf) { %>
   <h2>Add a climb that you've completed!</h2>
 
-  <form id="add-climb-to-my-list" action="/profiles/<%= profile._id %>/myclimbs" method="POST">
-    <select>
+  <form id="add-climb-to-my-list" action="/profiles/<%= profile._id %>" method="POST">
+    <select name="climbId">
       <% climbs.forEach(climb => { %>
-        <option> <%= climb.name %> </option>
+        <option value="<%= climb._id %>"> <%= climb.name %> </option>
       <% }) %>
     </select>
     <button type="submit">Add Climb</button>
   </form>
+
+  <table id="climb-table">
+    <tbody>
+      <% climbs.forEach(climb => { %>
+        <tr>
+          <td><%= climb.name %></td>
+        </tr>
+      <% }) %> 
+    </tbody>
+  </table>
 
 <% } %>
 

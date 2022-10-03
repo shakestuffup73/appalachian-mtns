@@ -56,7 +56,6 @@ function show (req, res) {
       select: 'name'
     }
   })
-  
   .then (climb => {
     console.log('Climb data:', climb)
 

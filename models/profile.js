@@ -9,7 +9,8 @@ const profileSchema = new Schema({
     type: Boolean,
     default: false,
   },
-  friends: {type: Schema.Types.ObjectId, ref: "Profile"},
+  friends: [{type: Schema.Types.ObjectId, ref: "Profile"}],
+  myClimbs: [{type: Schema.Types.ObjectId, ref: "Climb"}],
   name: String,
   avatar: String,
 }, {
