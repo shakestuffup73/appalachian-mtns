@@ -5,9 +5,12 @@ const Schema = mongoose.Schema
 
 
 const profileSchema = new Schema({
+  admin: {
+    type: Boolean,
+    default: false,
+  },
   name: String,
   avatar: String,
-  iceClimbed: [{ type: Schema.Types.ObjectId, ref: 'Climb'}],
 }, {
   timestamps: true
 })
