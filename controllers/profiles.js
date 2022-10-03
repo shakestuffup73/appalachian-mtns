@@ -19,6 +19,7 @@ function show (req, res) {
   console.log('this is the show profile function!')
   Profile.findById(req.params.id)
   .populate('myClimbs')
+  .populate('myPartners')
   .then(profile => {
     const isSelf = profile._id.equals(req.user.profile._id)
     res.render('profiles/show', {
@@ -32,17 +33,18 @@ function show (req, res) {
   })
 }
 
-function addToList (req, res) {
+function addClimbToList (req, res) {
   console.log('this is the add to list function')
 
-  Profile.findById(req.params.id)
+  Profile.findById(req.user.profile._id)
+  .populate('myClimbs')
   .then (profile => {
-    profile.myClimbs.push(req.body.addToList)
-    console.log('this is req.body.addToList', req.body.addToList)
+
+    console.log('this is req.body', req.body)
+    profile.myClimbs.push(req.body.id)
 
     profile.save()
-    .then (savedClimb => {
-      savedClimb.populate('name')
+    .then (() => {
       res.redirect(`/profiles/${req.params.id}`)
     })
     .catch(error => {
@@ -52,8 +54,15 @@ function addToList (req, res) {
   })
 }
 
+function addPartnerToList(req, res) {
+
+}
+
+
+
 export {
   index,
   show,
-  addToList,
+  addClimbToList,
+  addPartnerToList,
 }

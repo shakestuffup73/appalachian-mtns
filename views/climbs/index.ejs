@@ -13,7 +13,8 @@
         <td><%= climb.grade %></td>
         <td><%= climb.location %></td>
         <td id="climbDetails"><a href="/climbs/<%= climb._id %>">Details</a></td>
-        <form action="/profiles/:id" method="POST" name="addToList">
+        <form action="/profiles/<%= user.profile._id %>" method="POST" name="addToList">
+        <input type="text" name="id" hidden value="<%= climb._id %>">
         <td><button type="submit">Add to Your List</button></td>
         </form>
       </tr>

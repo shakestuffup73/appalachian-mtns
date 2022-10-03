@@ -138,12 +138,7 @@ function updateReview (req, res) {
     review.content = req.body.content
 
     climb.save()
-
-    // console.log('this is the climb in updateReview function!', climb)
-    // console.log('this is climb.reviews:', climb.reviews)
-    // console.log('this is climb.reviews.id(req.params.reviewId):', climb.reviews.id(req.params.reviewId))
-    // console.log('this is review.content', review.content)
-
+    
     .then (() => {
       res.redirect(`/climbs/${climb._id}`)
     })

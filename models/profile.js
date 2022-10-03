@@ -9,7 +9,7 @@ const profileSchema = new Schema({
     type: Boolean,
     default: false,
   },
-  friends: [{type: Schema.Types.ObjectId, ref: "Profile"}],
+  myPartners: [{type: Schema.Types.ObjectId, ref: "Profile"}],
   myClimbs: [{type: Schema.Types.ObjectId, ref: "Climb"}],
   name: String,
   avatar: String,
@@ -22,3 +22,4 @@ const Profile = mongoose.model('Profile', profileSchema)
 export {
   Profile
 }
+

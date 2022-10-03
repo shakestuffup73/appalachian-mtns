@@ -4,7 +4,7 @@ import * as climbsCtrl from '../controllers/climbs.js'
 const router = Router()
 
 /* GET climbs listing. */
-router.get('/', climbsCtrl.index)
+router.get('/', isLoggedIn, climbsCtrl.index)
 router.get('/new', isLoggedIn, climbsCtrl.new)
 router.get('/:id', isLoggedIn, climbsCtrl.show)
 router.get('/:climbId/reviews/:reviewId/edit', isLoggedIn, climbsCtrl.editReview)

@@ -19,4 +19,22 @@
   </table>
 
 
+  <h2>Add partners that you've climbed with!</h2>
+
+  <table id="climb-table">
+    <tbody>
+      <% profile.myPartners.forEach(partner => { %>
+        <div class="card">
+          <img 
+            src="<%= profile.avatar %>" 
+            alt="<%= profile.name %>'s avatar"
+          >
+          <div class="card-body">
+            <h1 class="card-title"><%= profile.name %></h1>
+          </div>
+        </div>
+      <% }) %> 
+    </tbody>
+  </table>
+
 <%- include('../partials/footer') %>
