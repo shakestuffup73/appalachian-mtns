@@ -59,3 +59,17 @@
           <button id="edit-btn">Edit Review</button>
         </a>
       <% } %>
+
+
+
+
+This is for laterrrrr
+
+<form id="add-climb-to-my-list" action="/profiles/<%= profile._id %>" method="POST">
+    <select name="climbId">
+      <% climbs.forEach(climb => { %>
+        <option value="<%= climb._id %>"> <%= climb.name %> </option>
+      <% }) %>
+    </select>
+    <button type="submit">Add Climb</button>
+  </form>

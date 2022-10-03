@@ -18,16 +18,12 @@ function index(req, res) {
 function show (req, res) {
   console.log('this is the show profile function!')
   Profile.findById(req.params.id)
+  .populate('myClimbs')
   .then(profile => {
-    Climb.find({})
-    .populate('name')
-    .then (climbs => {
-      const isSelf = profile._id.equals(req.user.profile._id)
-      res.render('profiles/show', {
-        isSelf,
-        profile,
-        climbs,
-      })
+    const isSelf = profile._id.equals(req.user.profile._id)
+    res.render('profiles/show', {
+      isSelf,
+      profile,
     })
   })
   .catch(error => {
