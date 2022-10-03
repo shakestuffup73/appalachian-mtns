@@ -75,6 +75,9 @@ function addPartnerToList(req, res) {
   })
 }
 
+function deletePartner(req, res) {
+  console.log('this is the delete partner function!')
+}
 
 
 export {
@@ -82,4 +85,5 @@ export {
   show,
   addClimbToList,
   addPartnerToList,
+  deletePartner,
 }
