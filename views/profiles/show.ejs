@@ -5,7 +5,7 @@
 
 <h1> It's <%= isSelf ? 'your' : profile.name %> list</h1>
 
-  <h2>Add a climb that you've completed!</h2>
+  <h2>Climbs that you've completed!</h2>
 
   <table id="climb-table">
     <tbody>
@@ -19,22 +19,22 @@
   </table>
 
 
-  <h2>Add partners that you've climbed with!</h2>
+  <h2>Partners that you've climbed with!</h2>
 
-  <table id="climb-table">
-    <tbody>
-      <% profile.myPartners.forEach(partner => { %>
-        <div class="card">
-          <img 
-            src="<%= profile.avatar %>" 
-            alt="<%= profile.name %>'s avatar"
-          >
-          <div class="card-body">
-            <h1 class="card-title"><%= profile.name %></h1>
-          </div>
+<table id="climb-table">
+  <tbody>
+    <% profile.myPartners.forEach(partner => { %>
+      <div class="card">
+        <img 
+          src="<%= partner.avatar %>" 
+          alt="<%= partner.name %>'s avatar"
+        >
+        <div class="card-body">
+          <h1 class="card-title"><%= partner.name %></h1>
         </div>
-      <% }) %> 
-    </tbody>
-  </table>
+      </div>
+    <% }) %> 
+  </tbody>
+</table>
 
 <%- include('../partials/footer') %>

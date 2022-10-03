@@ -34,7 +34,7 @@ function show (req, res) {
 }
 
 function addClimbToList (req, res) {
-  console.log('this is the add to list function')
+  console.log('this is the add climb to list function')
 
   Profile.findById(req.user.profile._id)
   .populate('myClimbs')
@@ -55,7 +55,24 @@ function addClimbToList (req, res) {
 }
 
 function addPartnerToList(req, res) {
+  console.log('this is the add partner function!')
 
+  Profile.findById(req.user.profile._id)
+  .populate('myPartners')
+  .then (profile => {
+
+    console.log('this is req.body', req.body)
+    profile.myPartners.push(req.body.id)
+
+    profile.save()
+    .then (() => {
+      res.redirect(`/profiles/${req.params.id}`)
+    })
+    .catch(error => {
+      console.log(error)
+      res.redirect(`/profiles/${req.params.id}`)
+    })
+  })
 }
 
 

@@ -4,10 +4,11 @@ import * as profilesCtrl from '../controllers/profiles.js'
 
 const router = Router()
 
-router.get('/', profilesCtrl.index)
+router.get('/', isLoggedIn, profilesCtrl.index)
 router.get('/:id', isLoggedIn, profilesCtrl.show)
-router.post('/:id', isLoggedIn, profilesCtrl.addClimbToList)
-router.post('/:id', isLoggedIn, profilesCtrl.addPartnerToList)
+router.patch('/:id/addClimb', isLoggedIn, profilesCtrl.addClimbToList)
+router.patch('/:id/addPartner', isLoggedIn, profilesCtrl.addPartnerToList)
+
 
 export {
   router

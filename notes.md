@@ -73,3 +73,22 @@ This is for laterrrrr
     </select>
     <button type="submit">Add Climb</button>
   </form>
+
+  // this is add partner function
+
+    Profile.findById(req.user.profile._id)
+  .populate('myPartners')
+  .then (profile => {
+
+    console.log('this is req.body', req.body)
+    profile.myPartners.push(req.body.id)
+
+    profile.save()
+    .then (() => {
+      res.redirect(`/profiles/${req.params.id}`)
+    })
+    .catch(error => {
+      console.log(error)
+      res.redirect(`/profiles/${req.params.id}`)
+    })
+  })
