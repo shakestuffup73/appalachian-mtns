@@ -1,22 +1,23 @@
 <%- include('../partials/html-head') %>
   <%- include('../partials/nav') %>
 
-    <h1> This is Amanda's Profile </h1>
+<h1> This is Amanda's Profile </h1>
 
-    <h1> It's <%= isSelf ? 'your' : profile.name %> list</h1>
+<h1> It's <%= isSelf ? 'your' : profile.name %> list</h1>
 
-    <% if (isSelf) { %>
-      <h2>Add a climb that you've completed!</h2>
+<% if (isSelf) { %>
+  <h2>Add a climb that you've completed!</h2>
 
-      <form id="add-mtn-to-my-list" action="/profiles/<%= profile._id %>/myclimbs" method="POST">
-        <select name="myMtn">
+  <form id="add-climb-to-my-list" action="/profiles/<%= profile._id %>/myclimbs" method="POST">
+    <select>
+      <% climbs.forEach(climb => { %>
+        <option> <%= climb.name %> </option>
+      <% }) %>
+    </select>
+    <button type="submit">Add Climb</button>
+  </form>
 
-        </select>
-
-        <button type="submit">Add Climb</button>
-      </form>
-
-      <% } %>
+<% } %>
 
 
-        <%- include('../partials/footer') %>
+<%- include('../partials/footer') %>

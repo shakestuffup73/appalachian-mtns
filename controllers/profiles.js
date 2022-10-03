@@ -19,10 +19,14 @@ function show (req, res) {
   console.log('this is the show profile function!')
   Profile.findById(req.params.id)
   .then(profile => {
-    const isSelf = profile._id.equals(req.user.profile._id)
-    res.render('profiles/show', {
-      isSelf,
-      profile,
+    Climb.find({})
+    .then (climbs => {
+      const isSelf = profile._id.equals(req.user.profile._id)
+      res.render('profiles/show', {
+        isSelf,
+        profile,
+        climbs,
+      })
     })
   })
   .catch(error => {
