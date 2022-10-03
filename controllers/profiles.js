@@ -37,16 +37,17 @@ function addToList (req, res) {
 
   Profile.findById(req.params.id)
   .then (profile => {
-    profile.myClimbs.push(req.body.climbId)
-    console.log('this is req.body.climbId', req.body.climbId)
-    console.log('this is profile.myClimbs', profile.myClimbs)
+    profile.myClimbs.push(req.body.addToList)
+    console.log('this is req.body.addToList', req.body.addToList)
+
     profile.save()
-    .then (() => {
-      res.redirect(`/profiles/${profile._id}`)
+    .then (savedClimb => {
+      savedClimb.populate('name')
+      res.redirect(`/profiles/${req.params.id}`)
     })
     .catch(error => {
       console.log(error)
-      res.redirect(`/profiles/${profile._id}`)
+      res.redirect(`/profiles/${req.params.id}`)
     })
   })
 }

@@ -5,7 +5,6 @@
 
 <h1> It's <%= isSelf ? 'your' : profile.name %> list</h1>
 
-<% if (isSelf) { %>
   <h2>Add a climb that you've completed!</h2>
 
   <table id="climb-table">
@@ -18,8 +17,6 @@
       <% }) %> 
     </tbody>
   </table>
-
-<% } %>
 
 
 <%- include('../partials/footer') %>

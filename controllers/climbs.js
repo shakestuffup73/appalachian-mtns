@@ -38,7 +38,7 @@ function create (req, res) {
   Climb.create(req.body)
   .then(climb => {
     console.log('this is the climb being created', climb)
-    res.redirect('/climbs/new')
+    res.redirect('/climbs')
   })
   .catch (error => {
     res.redirect('/climbs/new')
