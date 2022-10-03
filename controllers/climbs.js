@@ -116,9 +116,7 @@ function deleteReview (req, res) {
 function editReview (req, res) {
   console.log('this is the edit review function')
   Climb.findById(req.params.climbId)
-
   .then (climb => {
-
     const thisReview = climb.reviews.id(req.params.reviewId)
     // console.log('this is the review to edit:', thisReview)
     // console.log('this is the reviewer:', thisReview.reviewer)
@@ -137,20 +135,19 @@ function editReview (req, res) {
 function updateReview (req, res) {
   Climb.findById(req.params.climbId)
   .then (climb => {
+    const review = climb.reviews.id(req.params.reviewId)
+    review.content = req.body.content
 
-  const thisReview = climb.reviews.id(req.params.reviewId)
-    // console.log('this is the review to edit:', thisReview)
-    // console.log('this is the reviewer:', thisReview.reviewer)
-    // console.log('this is the current user:', req.user.profile._id )
-    thisReview.push(req.body)
-    thisReview.save()
-    .then (updatedReview => {
+    climb.save()
+
+    // console.log('this is the climb in updateReview function!', climb)
+    // console.log('this is climb.reviews:', climb.reviews)
+    // console.log('this is climb.reviews.id(req.params.reviewId):', climb.reviews.id(req.params.reviewId))
+    // console.log('this is review.content', review.content)
+
+    .then (() => {
       res.redirect(`/climbs/${climb._id}`)
     })
-  })
-  .catch(err => {
-    console.log(err)
-    res.redirect(`/climbs`)
   })
 }
 
