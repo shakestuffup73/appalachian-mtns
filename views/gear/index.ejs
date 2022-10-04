@@ -6,21 +6,117 @@
 <section>
   <h1>Sharp shiny objects</h1>
   <% if (user) { %>
-    <h2>Add your gear!</h2>
-    <form action="/profile/<%" method="POST">
+    <h2>Add Gear & Skills to your Profile!</h2>
+    <form action="/profile/" method="POST">
       <label>
-        Dry Rope, 60m
-        <input type="checkbox" name="" autocomplete="off">
+        Can you lead on ice?
+        <input type="checkbox" name="leadOnIce" autocomplete="off">
       </label>
+      <br>
       <label>
-        Tasty:
-        <input type="checkbox" name="tasty">
+        Can you lead mixed climbs?
+        <input type="checkbox" name="leadMixed">
       </label>
-      <button type="submit">Add Gear</button>
+      <br>
+      <label>
+        Can you clean on ice?
+        <input type="checkbox" name="cleanOnIce">
+      </label>
+      <br>
+      <label>
+        Can you clean on rock?
+        <input type="checkbox" name="cleanOnRock">
+      </label>
+      <br>
+      <label>
+        Do you top-rope on ice?
+        <input type="checkbox" name="topRopeOnIce">
+      </label>
+      <br>
+      <label>
+        Do you top-rope on rock?
+        <input type="checkbox" name="topRopeOnRock">
+      </label>
+      <br>
+      <label>
+        Do you own a full ice rack?
+        <input type="checkbox" name="fullIceRack">
+      </label>
+      <br>
+      <label>
+        Do you own a full rock rack?
+        <input type="checkbox" name="fullRockRack">
+      </label>
+      <br>
+      <label>
+        Do you own a 60m dry rope?
+        <input type="checkbox" name="dryRope60m">
+      </label>
+      <br>
+      <label>
+        Do you own a 70m dry rope?
+        <input type="checkbox" name="dryRope70m">
+      </label>
+      <br>
+      <label>
+        Do you own half ropes?
+        <input type="checkbox" name="halfRopes">
+      </label>
+      <br>
+      <label>
+        Do you own ice tools?
+        <input type="checkbox" name="iceTools">
+      </label>
+      <br>
+      <label>
+        Do you own crampons?
+        <input type="checkbox" name="crampons">
+      </label>
+      <br>
+      <label>
+        Do you own & climb with a helmet?
+        <input type="checkbox" name="helmet">
+      </label>
+      <br>
+      <label>
+        Do you have your own harness?
+        <input type="checkbox" name="harness">
+      </label>
+      <br>
+      <label>
+        What's in your rock rack?
+        <input type="text" name="rockRack">
+      </label>
+      <br>
+      <label>
+        What's in your ice rack?
+        <input type="text" name="iceRack">
+      </label>
+      <br>
+      <label>
+        What are you missing from your rock rack?
+        <input type="text" name="missingRock">
+      </label>
+      <br>
+      <label>
+        What are you missing from your ice rack?
+        <input type="text" name="missingIce">
+      </label>
+      <br>
+      <label>
+        What other gear do you have that you want partners to know about?
+        <input type="text" name="otherGear">
+      </label>
+      <br>
+      <label>
+        Do you have extra gear to outfit a beginner safely?
+        <input type="text" name="extraGear">
+      </label>
+      <br>
+      <button type="submit">Add Gear and Skills</button>
     </form>
   <% } %>
 </section>
-
 
 
 
