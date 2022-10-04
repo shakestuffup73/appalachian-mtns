@@ -140,7 +140,6 @@ function deleteGearSkill(req, res) {
 }
 
 
-
 export {
   index,
   show,

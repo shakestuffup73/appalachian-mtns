@@ -66,172 +66,88 @@
       <td>
         <tr>
           Lead on Ice is: <%= myGearSkill.leadOnIce ? 'yes' : 'no' %>
-            
-          <% if (isSelf) { %> 
-            <form action="/profiles/<%= user.profile._id %>/deleteGearSkill/<%= myGearSkill._id %>?_method=DELETE" method="POST">
-              <button class="btn" type="submit">Delete Gear or Skill</button>
-            </form>
-            <% } %>
         </tr>
       </td>
       <br>
       <td>
         <tr>
           Lead on Rock is: <%= myGearSkill.leadOnRock ? 'yes' : 'no' %>
-
-            <% if (isSelf) { %> 
-            <form action="/profiles/<%= user.profile._id %>/deleteGearSkill/<%= myGearSkill._id %>?_method=DELETE" method="POST">
-              <button class="btn" type="submit">Delete Gear or Skill</button>
-            </form>
-            <% } %> 
-
         </tr>
       </td>
       <br>
         <td>
           <tr>
           Clean on Ice is: <%= myGearSkill.cleanOnIce ? 'yes' : 'no' %>
-
-          <% if (isSelf) { %> 
-            <form action="/profiles/<%= user.profile._id %>/deleteGearSkill/<%= myGearSkill._id %>?_method=DELETE" method="POST">
-              <button class="btn" type="submit">Delete Gear or Skill</button>
-            </form>
-            <% } %>
-
           </tr>
         </td>
         <br>
         <td>
           <tr>
           Clean on Rock is: <%= myGearSkill.cleanOnRock ? 'yes' : 'no' %>
-
-          <% if (isSelf) { %> 
-            <form action="/profiles/<%= user.profile._id %>/deleteGearSkill/<%= myGearSkill._id %>?_method=DELETE" method="POST">
-              <button class="btn" type="submit">Delete Gear or Skill</button>
-            </form>
-            <% } %>
-
           </tr>
         </td>
         <br>
         <td>
           <tr>
           Top Rope Ice is: <%= myGearSkill.topRopeIce ? 'yes' : 'no' %>
-
-          <% if (isSelf) { %> 
-            <form action="/profiles/<%= user.profile._id %>/deleteGearSkill/<%= myGearSkill._id %>?_method=DELETE" method="POST">
-              <button class="btn" type="submit">Delete Gear or Skill</button>
-            </form>
-            <% } %>
-
           </tr>
         </td>
         <br>
         <td>
           <tr>
           Top Rope Rock is: <%= myGearSkill.topRopeRock ? 'yes' : 'no' %>
-
-          <% if (isSelf) { %> 
-            <form action="/profiles/<%= user.profile._id %>/deleteGearSkill/<%= myGearSkill._id %>?_method=DELETE" method="POST">
-              <button class="btn" type="submit">Delete Gear or Skill</button>
-            </form>
-            <% } %>
-
           </tr>
         </td>
         <br>
         <td>
           <tr>
           Own a full ice rack?: <%= myGearSkill.fullIceRack ? 'yes' : 'no' %>
-
-          <% if (isSelf) { %> 
-            <form action="/profiles/<%= user.profile._id %>/deleteGearSkill/<%= myGearSkill._id %>?_method=DELETE" method="POST">
-              <button class="btn" type="submit">Delete Gear or Skill</button>
-            </form>
-          <% } %>
-
           </tr>
         </td>
         <br>
         <td>
           <tr>
           What's in my ice rack: <%= myGearSkill.iceRack %>
-
-          <% if (isSelf) { %> 
-            <form action="/profiles/<%= user.profile._id %>/deleteGearSkill/<%= myGearSkill._id %>?_method=DELETE" method="POST">
-              <button class="btn" type="submit">Delete Gear or Skill</button>
-            </form>
-          <% } %>
-
           </tr>
         </td>
         <br>
         <td>
           <tr>
           Own a full rock rack?: <%= myGearSkill.fullRockRack ? 'yes' : 'no' %>
-
-          <% if (isSelf) { %> 
-            <form action="/profiles/<%= user.profile._id %>/deleteGearSkill/<%= myGearSkill._id %>?_method=DELETE" method="POST">
-              <button class="btn" type="submit">Delete Gear or Skill</button>
-            </form>
-          <% } %>
-
           </tr>
         </td>
         <br>
         <td>
           <tr>
           What's in my rock rack: <%= myGearSkill.rockRack %>
-
-          <% if (isSelf) { %> 
-            <form action="/profiles/<%= user.profile._id %>/deleteGearSkill/<%= myGearSkill._id %>?_method=DELETE" method="POST">
-              <button class="btn" type="submit">Delete Gear or Skill</button>
-            </form>
-          <% } %>
-
           </tr>
         </td>
         <br>
         <td>
           <tr>
           Own a 60m dry rope?: <%= myGearSkill.dryRope60m ? 'yes' : 'no' %>
-
-          <% if (isSelf) { %> 
-            <form action="/profiles/<%= user.profile._id %>/deleteGearSkill/<%= myGearSkill._id %>?_method=DELETE" method="POST">
-              <button class="btn" type="submit">Delete Gear or Skill</button>
-            </form>
-          <% } %>
-
           </tr>
         </td>
         <br>
         <td>
           <tr>
           Own a 70m dry rope?: <%= myGearSkill.dryRope70m ? 'yes' : 'no' %>
-
-          <% if (isSelf) { %> 
-            <form action="/profiles/<%= user.profile._id %>/deleteGearSkill/<%= myGearSkill._id %>?_method=DELETE" method="POST">
-              <button class="btn" type="submit">Delete Gear or Skill</button>
-            </form>
-          <% } %>
-
           </tr>
         </td>
         <br>
         <td>
           <tr>
           Own half ropes?: <%= myGearSkill.halfRopes ? 'yes' : 'no' %>
-
-          <% if (isSelf) { %> 
-            <form action="/profiles/<%= user.profile._id %>/deleteGearSkill/<%= myGearSkill._id %>?_method=DELETE" method="POST">
-              <button class="btn" type="submit">Delete Gear or Skill</button>
-            </form>
-          <% } %>
-
           </tr>
         </td>
+        <br>
+        <% if (isSelf) { %> 
+          <form action="/profiles/<%= user.profile._id %>/deleteGearSkill/<%= myGearSkill._id %>?_method=DELETE" method="POST">
+            <button class="btn" type="submit">Delete Gear/Skills List</button>
+          </form>
+          <% } %>  
       <% }) %>
-  <% } %> 
+  <% } %>
   </tbody>
 </table>
 
