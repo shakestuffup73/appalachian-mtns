@@ -68,8 +68,6 @@ function deleteClimb (req, res) {
   })
 }
 
-
-
 function addPartnerToList(req, res) {
   console.log('this is the add partner function!')
 

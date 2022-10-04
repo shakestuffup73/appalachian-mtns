@@ -3,7 +3,6 @@ import { Climb } from '../models/climb.js'
 
 const Schema = mongoose.Schema
 
-
 const profileSchema = new Schema({
   admin: {
     type: Boolean,
