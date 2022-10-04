@@ -15,9 +15,11 @@
           <td><%= climb.grade %></td>
         </tr>
         <div>
+        <% if (isSelf) { %>
         <form action="/profiles/<%= user.profile._id %>/deleteClimb/<%= climb._id %>?_method=DELETE" method="POST">
           <button class="btn" type="submit">Delete Climb</button>
         </form>
+        <% } %> 
       </div>
       <% }) %> 
     </tbody>
@@ -38,9 +40,11 @@
           <h1 class="card-title"><%= partner.name %></h1>
         </div>
         <div>
+          <% if (isSelf) { %> 
           <form action="/profiles/<%= user.profile._id %>/deletePartner/<%= partner._id %>?_method=DELETE" method="POST">
             <button class="btn" type="submit">Delete Partner</button>
           </form>
+          <% } %> 
         </div>
       </div>
     <% }) %> 
