@@ -108,13 +108,12 @@ function addGearList (req, res) {
 
   Profile.findById(req.user.profile._id)
   .populate('myGearSkills')
-  .then (profile => {
+  .then (myProfile => {
 
-    console.log('this is req.body', req.body)
+    req.body = !!req.body
+    myProfile.myGearSkills.push(req.body)
 
-    profile.myGearSkills.push(req.body)
-
-    profile.save()
+    myProfile.save()
     .then (() => {
       res.redirect(`/profiles/${req.params.id}`)
     })

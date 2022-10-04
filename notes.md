@@ -1,21 +1,16 @@
-leadOnIce: Boolean,
-  leadMixed: Boolean,
-  cleanOnIce: Boolean,
-  cleanOnRock: Boolean,
-  topRopeOnIce: Boolean,
-  topRopeOnRock: Boolean,
-  fullIceRack: Boolean,
-  fullRockRack: Boolean,
-  rockRack: String,
-  iceRack: String,
-  dryRope60m: Boolean,
-  dryRope70m: Boolean,
-  halfRopes: Boolean,
-  iceTools: Boolean,
-  crampons: Boolean,
-  helmet: Boolean,
-  harness: Boolean,
-  otherGear: String,
-  missingRock: String,
-  missingIce: String,
-  extraGear: Boolean,
+myGearSkills.leadOnIce = !!myGearSkills.leadOnIce
+    myGearSkills.leadMixed = !!myGearSkills.leadMixed
+    myGearSkills.cleanOnIce = !!myGearSkills.cleanOnIce
+    myGearSkills.cleanOnRock = !!myGearSkills.cleanOnRock
+    myGearSkills.topRopeOnRock = !!myGearSkills.topRopeOnRock
+    myGearSkills.fullIceRack = !!myGearSkills.fullIceRack
+    myGearSkills.rockRack = !!myGearSkills.rockRack
+    myGearSkills.iceRack = !!myGearSkills.iceRack
+    myGearSkills.dryRope60m = !!myGearSkills.dryRope60m
+    myGearSkills.dryRope70m = !!myGearSkills.dryRope70m
+    myGearSkills.halfRopes = !!myGearSkills.halfRopes
+    myGearSkills.iceTools = !!myGearSkills.iceTools
+    myGearSkills.crampons = !!myGearSkills.crampons
+    myGearSkills.helmet = !!myGearSkills.helmet
+    myGearSkills.harness = !!myGearSkills.harness
+    myGearSkills.extraGear = !!myGearSkills.extraGear

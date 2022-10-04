@@ -129,6 +129,37 @@
           </tr>
         </td>
         <br>
+        <td>
+          <tr>
+          Own ice tools?: <%= myGearSkill.iceTools ? 'yes' : 'no' %>
+          </tr>
+        </td>
+        <br>
+        <td>
+          <tr>
+          Own crampons?: <%= myGearSkill.crampons ? 'yes' : 'no' %>
+          </tr>
+        </td>
+        <br>
+        <td>
+          <tr>
+          Own & climb with a helmet?: <%= myGearSkill.helmet ? 'yes' : 'no' %>
+          </tr>
+        </td>
+        <br>
+        <td>
+          <tr>
+          Own harness?: <%= myGearSkill.harness ? 'yes' : 'no' %>
+          </tr>
+        </td>
+        <br>
+        <td>
+          <tr>
+          Have gear to outfit a beginner?: <%= myGearSkill.extraGear ? 'yes' : 'no' %>
+          </tr>
+        </td>
+        <br>
+
         <% if (isSelf) { %> 
           <form action="/profiles/<%= user.profile._id %>/deleteGearSkill/<%= myGearSkill._id %>?_method=DELETE" method="POST">
             <button class="btn" type="submit">Delete Gear/Skills List</button>
