@@ -15,7 +15,9 @@
         <td id="climbDetails"><a href="/climbs/<%= climb._id %>">Details</a></td>
 
         <form action="/profiles/<%= user.profile._id %>/addClimb?_method=PATCH" method="POST" name="addClimbToList">
-        <input type="text" name="id" hidden value="<%= climb._id %>">
+        
+          <input type="text" name="id" hidden value="<%= climb._id %>">
+        
         <td><button type="submit">Add to Your List</button></td>
         </form>
 

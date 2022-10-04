@@ -103,6 +103,29 @@ function deletePartner(req, res) {
   })
 }
 
+function addGearList (req, res) {
+  console.log('this is the add gearSkills to list function')
+
+  Profile.findById(req.user.profile._id)
+  .populate('myGearSkills')
+  .then (profile => {
+
+    console.log('this is req.body', req.body)
+
+    profile.myGearSkills.push(req.body)
+
+    profile.save()
+    .then (() => {
+      res.redirect(`/profiles/${req.params.id}`)
+    })
+    .catch(error => {
+      console.log(error)
+      res.redirect(`/profiles/${req.params.id}`)
+    })
+  })
+}
+
+
 
 export {
   index,
@@ -111,4 +134,5 @@ export {
   addPartnerToList,
   deleteClimb,
   deletePartner,
+  addGearList,
 }

@@ -58,4 +58,32 @@
   </tbody>
 </table>
 
+<table id="gearSkills-table">
+  <tbody>
+  <% if (profile.myGearSkills?.length) { %>    
+    <ul>
+      <% profile.myGearSkills.forEach(myGearSkill => { %>
+        <tr>
+          <td>
+          Lead on Ice is <%= myGearSkill.leadOnIce ? 'yes' : 'no' %>
+          </td>
+        </tr>
+        
+        <li>
+          Lead on Rock is <%= myGearSkill.leadOnRock ? 'yes' : 'no' %>
+        </li>
+        <div>
+          <% if (isSelf) { %> 
+          <form action="/profiles/<%= user.profile._id %>/deleteGearSkill/<%= myGearSkill._id %>?_method=DELETE" method="POST">
+            <button class="btn" type="submit">Delete Gear or Skill</button>
+          </form>
+          <% } %> 
+        </div>
+      <% }) %>
+  <% } %> 
+  </tbody>
+</table>
+
+
+
 <%- include('../partials/footer') %>

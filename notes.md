@@ -92,3 +92,12 @@ This is for laterrrrr
       res.redirect(`/profiles/${req.params.id}`)
     })
   })
+
+
+  <div>
+          <% if (isSelf) { %> 
+          <form action="/profiles/<%= user.profile._id %>/deleteGearSkill/<%= gearSkill._id %>?_method=DELETE" method="POST">
+            <button class="btn" type="submit">Delete Gear/Skill</button>
+          </form>
+          <% } %> 
+        </div>

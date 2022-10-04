@@ -1,4 +1,5 @@
 import { Climb } from '../models/climb.js'
+import { Profile } from '../models/profile.js'
 import { Gear } from '../models/gear.js'
 
 function index (req, res) {
