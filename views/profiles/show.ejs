@@ -3,9 +3,7 @@
 
 <h1> This is <%= profile.name %>'s Profile </h1>
 
-<h1> It's <%= isSelf ? 'your' : profile.name %> list</h1>
-
-  <h2>Climbs that you've completed!</h2>
+  <h2>Climbs that <%= profile.name %>'s completed!</h2>
 
   <table id="climb-table">
     <tbody>
@@ -25,8 +23,7 @@
     </tbody>
   </table>
 
-
-  <h2>Partners that you've climbed with!</h2>
+  <h2>Partners that <%= profile.name %>'s climbed with!</h2>
 
 <table id="climb-table">
   <tbody>
