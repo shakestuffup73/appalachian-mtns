@@ -77,6 +77,16 @@ function addPartnerToList(req, res) {
 
 function deletePartner(req, res) {
   console.log('this is the delete partner function!')
+  Profile.findById(req.params.id)
+  .then (myProfile => {
+    const index = myProfile.myPartners.indexOf(req.params.partnerId)
+    myProfile.myPartners.splice(index, 1)
+
+    myProfile.save()
+    .then (() => {
+      res.redirect(`/profiles/${req.params.id}`)
+    })
+  })
 }
 
 

@@ -32,10 +32,12 @@
         <div class="card-body">
           <h1 class="card-title"><%= partner.name %></h1>
         </div>
+        <div>
+          <form action="/profiles/<%= user.profile._id %>/deletePartner/<%= partner._id %>?_method=DELETE" method="POST">
+            <button class="btn" type="submit">Delete Partner</button>
+          </form>
+        </div>
       </div>
-
-      
-
     <% }) %> 
   </tbody>
 </table>

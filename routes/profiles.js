@@ -9,7 +9,7 @@ router.get('/:id', isLoggedIn, profilesCtrl.show)
 router.patch('/:id/addClimb', isLoggedIn, profilesCtrl.addClimbToList)
 router.patch('/:id/addPartner', isLoggedIn, profilesCtrl.addPartnerToList)
 
-router.delete('/:id/deletePartner', isLoggedIn, profilesCtrl.deletePartner)
+router.delete('/:id/deletePartner/:partnerId', isLoggedIn, profilesCtrl.deletePartner)
 
 
 export {
