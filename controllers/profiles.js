@@ -107,10 +107,13 @@ function addGearList (req, res) {
   console.log('this is the add gearSkills to list function')
 
   Profile.findById(req.user.profile._id)
-  .populate('myGearSkills')
   .then (myProfile => {
 
-    req.body = !!req.body
+    for (const prop in req.body) {
+      req.body[prop]=!!req.body[prop]
+    }
+
+    console.log('this is req.body in addGearList:', req.body)
     myProfile.myGearSkills.push(req.body)
 
     myProfile.save()
