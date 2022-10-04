@@ -11,13 +11,15 @@
         <tr>
           <td><%= climb.name %></td>
           <td><%= climb.grade %></td>
+          <td>
+          <% if (isSelf) { %>
+          <form action="/profiles/<%= user.profile._id %>/deleteClimb/<%= climb._id %>?_method=DELETE" method="POST">
+            <button class="btn" type="submit">Delete Climb</button>
+          </form>
+          <% } %>
+        </td> 
         </tr>
         <div>
-        <% if (isSelf) { %>
-        <form action="/profiles/<%= user.profile._id %>/deleteClimb/<%= climb._id %>?_method=DELETE" method="POST">
-          <button class="btn" type="submit">Delete Climb</button>
-        </form>
-        <% } %> 
       </div>
       <% }) %> 
     </tbody>
@@ -28,14 +30,20 @@
 <table id="climb-table">
   <tbody>
     <% profile.myPartners.forEach(partner => { %>
-      <div class="card">
-        <img 
-          src="<%= partner.avatar %>" 
-          alt="<%= partner.name %>'s avatar"
-        >
-        <div class="card-body">
-          <h1 class="card-title"><%= partner.name %></h1>
-        </div>
+      <tr>
+        <td> 
+          <div class="card">
+          <img 
+            src="<%= partner.avatar %>" 
+            alt="<%= partner.name %>'s avatar"
+          >
+        </td>
+        <td> 
+          <div class="card-body">
+            <h1 class="card-title"><%= partner.name %></h1>
+          </div>
+        </td>
+        <td>
         <div>
           <% if (isSelf) { %> 
           <form action="/profiles/<%= user.profile._id %>/deletePartner/<%= partner._id %>?_method=DELETE" method="POST">
@@ -43,6 +51,8 @@
           </form>
           <% } %> 
         </div>
+        </td>
+        </tr>
       </div>
     <% }) %> 
   </tbody>
