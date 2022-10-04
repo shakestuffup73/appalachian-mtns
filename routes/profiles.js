@@ -9,6 +9,7 @@ router.get('/:id', isLoggedIn, profilesCtrl.show)
 router.patch('/:id/addClimb', isLoggedIn, profilesCtrl.addClimbToList)
 router.patch('/:id/addPartner', isLoggedIn, profilesCtrl.addPartnerToList)
 
+router.delete('/:id/deleteClimb/:climbId', isLoggedIn, profilesCtrl.deleteClimb)
 router.delete('/:id/deletePartner/:partnerId', isLoggedIn, profilesCtrl.deletePartner)
 
 

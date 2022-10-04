@@ -54,6 +54,22 @@ function addClimbToList (req, res) {
   })
 }
 
+function deleteClimb (req, res) {
+  console.log('this is the delete climb from list function')
+  Profile.findById(req.params.id)
+  .then (myProfile => {
+    const index = myProfile.myClimbs.indexOf(req.params.climbId)
+    myProfile.myClimbs.splice(index, 1)
+
+    myProfile.save()
+    .then (() => {
+      res.redirect(`/profiles/${req.params.id}`)
+    })
+  })
+}
+
+
+
 function addPartnerToList(req, res) {
   console.log('this is the add partner function!')
 
@@ -95,5 +111,6 @@ export {
   show,
   addClimbToList,
   addPartnerToList,
+  deleteClimb,
   deletePartner,
 }

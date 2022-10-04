@@ -14,6 +14,11 @@
           <td><%= climb.name %></td>
           <td><%= climb.grade %></td>
         </tr>
+        <div>
+        <form action="/profiles/<%= user.profile._id %>/deleteClimb/<%= climb._id %>?_method=DELETE" method="POST">
+          <button class="btn" type="submit">Delete Climb</button>
+        </form>
+      </div>
       <% }) %> 
     </tbody>
   </table>
