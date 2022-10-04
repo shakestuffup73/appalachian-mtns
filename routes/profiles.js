@@ -13,6 +13,7 @@ router.patch('/:id/addGearSkills', isLoggedIn, profilesCtrl.addGearList)
 
 router.delete('/:id/deleteClimb/:climbId', isLoggedIn, profilesCtrl.deleteClimb)
 router.delete('/:id/deletePartner/:partnerId', isLoggedIn, profilesCtrl.deletePartner)
+router.delete('/:id/deleteGearSkills/:gearSkillId', isLoggedIn, profilesCtrl.deleteGearSkill)
 
 
 export {
