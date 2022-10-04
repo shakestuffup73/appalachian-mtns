@@ -125,6 +125,20 @@ function addGearList (req, res) {
   })
 }
 
+function deleteGearSkill(req, res) {
+  console.log('this is the delete partner function!')
+  Profile.findById(req.params.id)
+  .then (myProfile => {
+    const index = myProfile.myGearSkills.indexOf(req.params.gearSkillId)
+    myProfile.myGearSkills.splice(index, 1)
+
+    myProfile.save()
+    .then (() => {
+      res.redirect(`/profiles/${req.params.id}`)
+    })
+  })
+}
+
 
 
 export {
@@ -135,4 +149,5 @@ export {
   deleteClimb,
   deletePartner,
   addGearList,
+  deleteGearSkill,
 }
