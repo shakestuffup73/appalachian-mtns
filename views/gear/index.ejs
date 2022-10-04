@@ -3,7 +3,23 @@
 
 <h1>This is the gear list page!</h1>
 
-
+<section>
+  <h1>Sharp shiny objects</h1>
+  <% if (user) { %>
+    <h2>Add your gear!</h2>
+    <form action="/profile/<%" method="POST">
+      <label>
+        Dry Rope, 60m
+        <input type="checkbox" name="" autocomplete="off">
+      </label>
+      <label>
+        Tasty:
+        <input type="checkbox" name="tasty">
+      </label>
+      <button type="submit">Add Gear</button>
+    </form>
+  <% } %>
+</section>
 
 
 

@@ -12,6 +12,7 @@ const profileSchema = new Schema({
   myClimbs: [{type: Schema.Types.ObjectId, ref: "Climb"}],
   name: String,
   avatar: String,
+  canLead: Boolean,
 }, {
   timestamps: true
 })
