@@ -32,13 +32,13 @@
       <% climb.reviews.forEach(review => { %>
       <tr>
         <div id="review-content">
-        <%= review.content %>
-        <br>
-        <br>
-        by: <%= review.reviewer.name %>
-        <br> 
+          <%= review.content %>
+          <br>
+          <br>
+          by: <%= review.reviewer.name %>
+          <br> 
+        </div>
       </tr>
-      </div>
       <br>
       <div id="update-review-div">
       <% if (user.profile._id.equals(climb.owner._id) || user.profile._id.equals(review.reviewer._id)) { %>
