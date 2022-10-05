@@ -8,9 +8,7 @@
   <div>Climb: <%= climb.name %></div>
   <div>Grade: <%= climb.grade %></div>
   <div>Location: <%= climb.location %></div>
-  <div>Date Climbed: <%= climb.date %></div>
-  <div>Submitted By:  </div>
-  <div>
+  <div id="review-div">
     <form 
     action="/climbs/<%= climb._id %>/reviews"
     method = "POST"
