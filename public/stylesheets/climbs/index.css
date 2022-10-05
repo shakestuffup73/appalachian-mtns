@@ -3,10 +3,6 @@
   justify-content: center;
 }
 
-#title-div {
-  font-size: 12px;
-  margin: 20px;
-}
 
 table {
   margin: 20px;
@@ -62,7 +58,7 @@ textarea {
   border: 4px solid #9C3848;
   background-color: #002855;
   font-family: warnock-pro,serif;
-  color: black;
+  color: whitesmoke;
 }
 
 textarea:active {
@@ -131,6 +127,7 @@ textarea:active {
   align-items: center;
   justify-content: center;
   margin: 20px;
+  font-size: 24px;
 }
 
 #add-review-btn {
@@ -144,10 +141,40 @@ textarea:active {
   align-items: center;
   justify-content: center;
   margin: 10px;
+  margin-bottom: 0;
   padding: 20px;
   font-size: 18px;
+  border: 3px solid #fb8b24;
+}
+
+#edit-review-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
 }
 
 #noReviews {
   width: 100%;
+}
+
+#delete-btn, #edit-btn {
+  width: 100px;
+  height: 30px;
+}
+
+#climb-details-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#title-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }

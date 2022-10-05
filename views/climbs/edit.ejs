@@ -1,24 +1,27 @@
 <%- include('../partials/html-head') %>
-
+<link rel="stylesheet" href="/stylesheets/climbs/index.css" />
 <%- include('../partials/nav2') %>
 
-<h1>This is the edit page for review</h1>
+<div id="title-div">
+<h1>Edit your review</h1>
+</div>
 
 <section id="climbDetail">
+<div id="climb-details-div">
   <div>Climb: <%= climb.name %></div>
   <div>Grade: <%= climb.grade %></div>
   <div>Location: <%= climb.location %></div>
-  <div>Date Climbed: <%= climb.date %></div>
-  <div>Submitted By:  </div>
-
-<div>
+  <div>Date Climbed: <%= climb.date.toDateString() %></div>
+</div>
+<div id="edit-review-div">
   <form 
   action="/climbs/<%= climb._id %>/reviews/<%= review._id %>?_method=PUT"
   method = "POST"
   >
   <div id="add-review-div">
     <label for="review-box">Your Review:</label>
-    <input name="content" value="<%= review.content %>" type="text">
+    <br>
+      <textarea rows="5" cols="50" name="content" type="text"></textarea>
     <button type="submit" id="add-review-btn">Update Review</button>
   </div>
   </form>
