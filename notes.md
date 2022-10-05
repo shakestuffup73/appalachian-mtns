@@ -11,4 +11,5 @@ Color palette:
 #7d8597
 #979dac
 
-hello, <%= user ? user.profile.name : "Rock & Ice" %>
+// images
+

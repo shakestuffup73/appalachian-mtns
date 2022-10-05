@@ -48,7 +48,6 @@ nav > a:active {
   color: #0353a4;
 }
 
-
 main {
   display: flex;
   align-items: center;
@@ -57,53 +56,47 @@ main {
 }
 
 h1 {
-  font-size: 34px;
+  font-size: 44px;
 }
 
 h2 {
   font-size: 24px;
 }
 
-h3 {
-  font-size: 24px;
-}
-
-ul {
-  list-style-type: none;
-}
-
-p, label, li, button, input {
-  font-size: 18px;
-}
-
-label {
-  font-weight: bold;
-}
-
-section {
-  padding: 50px;
-}
-
 a {
   color: whitesmoke;
-}
-
-pre {
-  font-size: 14px;
 }
 
 .btn {
   margin: 16px 0;
 }
 
-.link {
-  padding: 10px 0;
-  font-size: 18px;
-  display: inline-block;
-}
-
 .profile-avatar {
   margin-top: 50px;
+}
+
+#index-page-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#title-div {
+  color: whitesmoke;
+  text-shadow: 2px 2px #9C3848;
+}
+
+#ice-tools-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#ice-tools-logo > img {
+  height: 140px;
+  width: 180px;
+  margin: 10px;
 }
 
 #welcome > h2 {
@@ -116,8 +109,6 @@ pre {
   margin: 10px;
   padding: 10px;
   width: 360px;
-  margin-top: -85px;
-  transform: rotate(-13deg) translateX(2px);
 }
 
 #go-to-profile {
@@ -129,7 +120,7 @@ pre {
   background-color: #002855;
   width: 40%;
   height: 50px;
-  transform: translateY(-180px) translateX(32px);
+  transform: translateX(70%);
 }
 
 #go-to-profile > a {
@@ -145,19 +136,4 @@ pre {
 #go-to-profile:active {
   border: 4px solid #9C3848;
   border-radius: 12%;
-}
-
-#index-img-div > img {
-  width: 360px;
-  height: 280px;
-  border: 4px solid #0353a4;
-  border-radius: 2%;
-  background-color: #002855;
-}
-
-#title-div {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
