@@ -1,16 +1,14 @@
-myGearSkills.leadOnIce = !!myGearSkills.leadOnIce
-    myGearSkills.leadMixed = !!myGearSkills.leadMixed
-    myGearSkills.cleanOnIce = !!myGearSkills.cleanOnIce
-    myGearSkills.cleanOnRock = !!myGearSkills.cleanOnRock
-    myGearSkills.topRopeOnRock = !!myGearSkills.topRopeOnRock
-    myGearSkills.fullIceRack = !!myGearSkills.fullIceRack
-    myGearSkills.rockRack = !!myGearSkills.rockRack
-    myGearSkills.iceRack = !!myGearSkills.iceRack
-    myGearSkills.dryRope60m = !!myGearSkills.dryRope60m
-    myGearSkills.dryRope70m = !!myGearSkills.dryRope70m
-    myGearSkills.halfRopes = !!myGearSkills.halfRopes
-    myGearSkills.iceTools = !!myGearSkills.iceTools
-    myGearSkills.crampons = !!myGearSkills.crampons
-    myGearSkills.helmet = !!myGearSkills.helmet
-    myGearSkills.harness = !!myGearSkills.harness
-    myGearSkills.extraGear = !!myGearSkills.extraGear
+Color palette:
+
+#0466c8
+#0353a4
+#023e7d
+#002855
+#001845
+#001233
+#33415c
+#5c677d
+#7d8597
+#979dac
+
+hello, <%= user ? user.profile.name : "Rock & Ice" %>

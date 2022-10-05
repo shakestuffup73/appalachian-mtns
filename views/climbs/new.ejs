@@ -3,17 +3,14 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <h1> This is the page to add a climb to the list </h1>
+  <h1> Add a Climb </h1>
   <div id="add-mtn">
-    <h1>
-      <%= title %>
-    </h1>
     <br>
     <select>
     <% climbs.forEach(climb => { %>
       <option> <%= climb.name %> </option>
     <% }) %>
-    </select> 
+    </select>
     <div id="add-climb">
       <h1>Not seeing your climb in the drop-down? Add it to the list here!</h1>
     </div>
@@ -34,6 +31,7 @@
       <input type="text" name="date" id="climb-date">
       <button type="submit">Add New Climb</button>
     </form>
+  </div>
 </main>
 
 

@@ -152,7 +152,7 @@ export {
   create,
   show,
   createReview,
-  deleteReview as delete,
+  deleteReview,
   editReview,
   updateReview,
 }

@@ -1,10 +1,11 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/climbs/index.css" />
 <%- include('../partials/nav') %>
 
 <main>
-
-<h1> This is the ice climbs index page (shows all climbs) </h1>
-
+<div id="title-div">
+  <h1>This Season's Climbs</h1>
+</div>
 <table id="climb-table">
   <tbody>
     <% climbs.forEach(climb => { %>
@@ -15,12 +16,9 @@
         <td id="climbDetails"><a href="/climbs/<%= climb._id %>">Details</a></td>
 
         <form action="/profiles/<%= user.profile._id %>/addClimb?_method=PATCH" method="POST" name="addClimbToList">
-        
           <input type="text" name="id" hidden value="<%= climb._id %>">
-        
-        <td><button type="submit">Add to Your List</button></td>
+        <td><button type="submit">Add Climb</button></td>
         </form>
-
       </tr>
     <% }) %> 
   </tbody>

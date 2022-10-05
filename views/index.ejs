@@ -2,15 +2,19 @@
 <%- include('./partials/nav') %>
 
 <main>
-  <h1>hello, <%= user ? user.profile.name : "friend" %></h1>
+  <div id="title-div">
+    <h1>New England Rock & Ice</h1>
+    <div id="index-img-div">
+      <img src="/media/images/ice1.jpg" alt="ice-climber">
+    </div>
+  </div>
+  <div id="welcome-name">
   <% if (user?.profile.avatar) { %>
-    <div>
-      <img
-        src="<%= user.profile.avatar %>"
-        alt="<%= user.profile.name %> avatar"
-      />
+    <div id="welcome">
+      <h2>Welcome back, <%= user.profile.name %></h2>
     </div>
   <% } %>
+</div>
 </main>
 
 <%- include('./partials/footer') %>
