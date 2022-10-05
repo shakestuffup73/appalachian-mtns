@@ -33,6 +33,13 @@ nav {
   font-size: 8px;
 }
 
+label {
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+}
+
+
 #climbDetails > a {
   font-family: black-beard,sans-serif;
   font-size: 16px;
@@ -50,6 +57,18 @@ button:hover, #climbDetails > a:hover {
 button:active, #climbDetails > a:active {
   border: 4px solid #9C3848;
 }
+
+textarea {
+  border: 4px solid #9C3848;
+  background-color: #002855;
+  font-family: warnock-pro,serif;
+  color: black;
+}
+
+textarea:active {
+  border: 6px solid #0096c7;
+}
+
 
 #add-review-div > input {
   word-wrap: break-word;
@@ -73,7 +92,7 @@ button:active, #climbDetails > a:active {
 }
 
 #ice-tools-logo > #home-link {
-  color: #002855
+  color: #002855;
 }
 
 #climb-details-title {
@@ -81,6 +100,8 @@ button:active, #climbDetails > a:active {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 #climb-details-title > h1 {
@@ -95,6 +116,13 @@ button:active, #climbDetails > a:active {
   align-items: center;
   justify-content: center;
   font-size: 28px;
+}
+
+#form-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #add-review-div {
@@ -117,9 +145,9 @@ button:active, #climbDetails > a:active {
   justify-content: center;
   margin: 10px;
   padding: 20px;
+  font-size: 18px;
 }
 
 #noReviews {
   width: 100%;
-  margin: 100px;
 }

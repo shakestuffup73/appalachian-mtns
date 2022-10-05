@@ -4,7 +4,6 @@
 
 <div id="climb-details-title">
   <h2> Climb Details for </h2>
-  <br>
   <h1> <%= climb.name %></h1>
 </div>
 
@@ -13,8 +12,8 @@
     <div>Grade: <%= climb.grade %></div>
     <div>Location: <%= climb.location %></div>
     <div>Date Climbed: <%= climb.date.toDateString() %></div>
-  </div>
-  <div id="review-div">
+  <br>
+  <div id="form-div">
     <form 
     action="/climbs/<%= climb._id %>/reviews"
     method = "POST"
@@ -22,7 +21,7 @@
     <div id="add-review-div">
       <label for="review-box">Have you climbed <%= climb.name %>? Leave a review!</label>
       <br>
-      <textarea rows="5" cols="30" name="content" type="text"></textarea>
+      <textarea rows="5" cols="50" name="content" type="text"></textarea>
       <button type="submit" id="add-review-btn">Add Review</button>
     </div>
     </form>
@@ -31,25 +30,28 @@
   <% if (climb.reviews.length) { %>
     <table id="climb-reviews">
       <% climb.reviews.forEach(review => { %>
-          <tr>
-            <div id="review-content">
-            <%= review.content %>
-            <br>
-            <%= review.reviewer.name %>
-            <br> 
-          </tr>
-          <br>
-          <% if (user.profile._id.equals(climb.owner._id) || user.profile._id.equals(review.reviewer._id)) { %>
-            <form action="/climbs/<%= climb._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
-              <button type="submit">Delete Review</button>
-            </form>
-          <% } %>
-          <% if (user.profile._id.equals(review.reviewer._id)) { %>
-            <a href="/climbs/<%= climb._id %>/reviews/<%= review._id %>/edit">
-              <button id="edit-btn">Edit Review</button>
-            </a>
-          <% } %>
-        </div>  
+      <tr>
+        <div id="review-content">
+        <%= review.content %>
+        <br>
+        <br>
+        by: <%= review.reviewer.name %>
+        <br> 
+      </tr>
+      </div>
+      <br>
+      <div id="update-review-div">
+      <% if (user.profile._id.equals(climb.owner._id) || user.profile._id.equals(review.reviewer._id)) { %>
+        <form action="/climbs/<%= climb._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
+          <button type="submit">Delete Review</button>
+        </form>
+      <% } %>
+      <% if (user.profile._id.equals(review.reviewer._id)) { %>
+        <a href="/climbs/<%= climb._id %>/reviews/<%= review._id %>/edit">
+          <button id="edit-btn">Edit Review</button>
+        </a>
+      <% } %>
+      </div>
     <% }) %> 
     </table>
     <% } else { %>
@@ -57,9 +59,8 @@
       <h3>No Reviews On This Climb Yet</h3>
     </div>
     <% } %>
-  <ul>
-  </ul>
-  </section>
+  </div>  
+</section>
 
 
 <%- include("../partials/footer") %>
