@@ -25,6 +25,14 @@ button {
   height: 25px;
 }
 
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 8px;
+}
+
 #climbDetails > a {
   font-family: black-beard,sans-serif;
   font-size: 16px;
@@ -51,9 +59,13 @@ button:active, #climbDetails > a:active {
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: translateY(-15px);
+  transform: translateY(-18px);
 }
 
 #ice-tools-logo > img {
-  height: 30px;
+  height: 26px;
+}
+
+#ice-tools-logo > #home-link {
+  color: #002855
 }

@@ -22,7 +22,7 @@ body {
 }
 
 nav {
-  background-color: #979dac;
+  background-color: whitesmoke;
   font-family: warnock-pro,serif;
   font-weight: bold;
   font-style: normal;
@@ -32,10 +32,11 @@ nav {
 }
 
 nav > a {
-  margin: 8px 10px;
+  margin: 4px 6px;
   text-decoration: none;
   font-size: 10px;
   display: flex;
+  color:  #001233;
   align-items: center;
   justify-content: center;
 }
