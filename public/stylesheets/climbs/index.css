@@ -46,7 +46,17 @@ button:active, #climbDetails > a:active {
   border: 0px solid #0353a4;
 }
 
-
 #add-mtn {
   margin: 20px;
+}
+
+#ice-tools-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-15px);
+}
+
+#ice-tools-logo > img {
+  height: 30px;
 }
