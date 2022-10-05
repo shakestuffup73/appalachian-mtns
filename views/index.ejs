@@ -13,6 +13,9 @@
     <div id="welcome">
       <h2>Welcome back, <%= user.profile.name %></h2>
     </div>
+    <div id="go-to-profile">
+      <a href="/profiles/<%= user.profile._id %>">Go To Your Profile</a>
+    </div>
   <% } %>
 </div>
 </main>
