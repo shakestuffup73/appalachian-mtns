@@ -51,6 +51,12 @@ button:active, #climbDetails > a:active {
   border: 4px solid #9C3848;
 }
 
+#add-review-div > input {
+  word-wrap: break-word;
+  word-break: break-word;
+  height: 60px;
+}
+
 #add-mtn {
   margin: 20px;
 }
@@ -68,4 +74,20 @@ button:active, #climbDetails > a:active {
 
 #ice-tools-logo > #home-link {
   color: #002855
+}
+
+#climb-details-title {
+  margin: 20px;
+  color: whitesmoke;
+  text-shadow: 2px 2px #9C3848;
+}
+
+#add-review-div {
+  height: 60px;
+  margin: 20px;
+}
+
+#review-content {
+  margin: 20px;
+  padding: 20px;
 }
