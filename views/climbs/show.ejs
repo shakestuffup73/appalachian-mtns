@@ -3,22 +3,26 @@
 <%- include('../partials/nav2') %>
 
 <div id="climb-details-title">
-<h1> Climb Details </h1>
+  <h2> Climb Details for </h2>
+  <br>
+  <h1> <%= climb.name %></h1>
 </div>
 
 <section id="climbDetail">
-  <div>Climb: <%= climb.name %></div>
-  <div>Grade: <%= climb.grade %></div>
-  <div>Location: <%= climb.location %></div>
-  <div>Date Climbed: <%= climb.date.toDateString() %></div>
+  <div id="climb-details-div">
+    <div>Grade: <%= climb.grade %></div>
+    <div>Location: <%= climb.location %></div>
+    <div>Date Climbed: <%= climb.date.toDateString() %></div>
+  </div>
   <div id="review-div">
     <form 
     action="/climbs/<%= climb._id %>/reviews"
     method = "POST"
     >
     <div id="add-review-div">
-      <label for="review-box">Your Review:</label>
-      <textarea rows="5" cols="20" name="content" type="text"></textarea>
+      <label for="review-box">Have you climbed <%= climb.name %>? Leave a review!</label>
+      <br>
+      <textarea rows="5" cols="30" name="content" type="text"></textarea>
       <button type="submit" id="add-review-btn">Add Review</button>
     </div>
     </form>
@@ -32,7 +36,6 @@
             <%= review.content %>
             <br>
             <%= review.reviewer.name %>
-            </div>
             <br> 
           </tr>
           <br>
@@ -45,7 +48,8 @@
             <a href="/climbs/<%= climb._id %>/reviews/<%= review._id %>/edit">
               <button id="edit-btn">Edit Review</button>
             </a>
-          <% } %>  
+          <% } %>
+        </div>  
     <% }) %> 
     </table>
     <% } else { %>
