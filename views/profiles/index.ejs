@@ -14,12 +14,9 @@
           >
           <div class="card-body">
             <h1 class="card-title"><%= profile.name %></h1>
-          </div>
-
-          <div>
           <form action="/profiles/<%= user.profile._id %>/addPartner?_method=PATCH" method="POST" name="addPartnerToList">
             <input type="text" name="id" hidden value="<%= profile._id %>">
-            <td><button type="submit">Add Partner to Your List</button></td>
+            <td><button id="add-partner-btn" type="submit">Add Partner</button></td>
           </form>
           </div>
         </div>
