@@ -56,8 +56,9 @@ LINK TO APP HERE:
   <li>David Stinson for motivating me to be employable</li>
   <li>Hunty for viewing people as errors to solve</li>
   <li>Ian for educating me on the origins of the Hunty term of endearment</li>
-  <li>Beryl Baldwin for the CSS support & acting skills</li>
-  <li>Cory Spicer & Emily D.S. for the encouragement & support!</li>
+  <li>Joe for encouraging me to take breaks despite my protest</li>
+  <li>Beryl Baldwin for the extra CSS support & acting skills</li>
+  <li>Cory Spicer & Emily D.S. for the encouragement & support</li>
   <li>Jackson, Emily L., Alex - major thanks to the entire GA IA/TA team!</li>
   <li>All of my SEI 8/22 cohort compadres for the feedback and debugging!</li>
 </ul>
