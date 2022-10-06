@@ -88,9 +88,17 @@ a {
   justify-content: center;
 }
 
-#title-div {
+#add-skills-div > h2 {
   color: whitesmoke;
   text-shadow: 2px 2px #9C3848;
+}
+
+#add-skills-div > label {
+  color: whitesmoke;
+}
+
+#title-div > h1 {
+  font-size: 32px;
 }
 
 #ice-tools-logo {

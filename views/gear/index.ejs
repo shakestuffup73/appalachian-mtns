@@ -3,7 +3,6 @@
 <%- include('../partials/nav2') %>
 
 <section>
-  <h1>Sharp shiny objects</h1>
   <% if (user) { %>
   <div id="add-skills-div">
     <h2>Add Gear & Skills to your Profile!</h2>
@@ -88,7 +87,9 @@
         Do you have extra gear to outfit a beginner?
       </label>
       <br>
+      <div id="gearskills-div">
       <button id="add-gear-btn" type="submit">Add Gear and Skills</button>
+      </div>
     </form>
     <% } %>  
   </div>

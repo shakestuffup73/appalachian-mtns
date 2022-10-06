@@ -66,19 +66,10 @@ textarea:active {
   border: 6px solid #0096c7;
 }
 
-
 #add-review-div > input {
   word-wrap: break-word;
   word-break: break-word;
   height: 20px;
-}
-
-#add-mtn {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 5px;
 }
 
 #ice-tools-logo {
@@ -126,6 +117,7 @@ textarea:active {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 30px;
 }
 
 #add-review-div, #add-climb-div {
@@ -189,13 +181,17 @@ textarea:active {
   width: 100px;
 }
 
-#add-climb-btn, #add-review-btn {
+#add-climb-btn, #add-review-btn, #add-gear-btn {
   width: 40%;
   height: 40px;
   border: 4px solid #0f4c5c;
   font-size: 12px;
   background-color: #9C3848;
   color: whitesmoke;
+}
+
+#add-gear-btn {
+  margin-top: 20px;
 }
 
 #delete-btn {
@@ -214,13 +210,17 @@ textarea:active {
   margin-bottom: 50px;
 }
 
-#title-div {
+#title-div, #gearskills-div {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-bottom: 10px;
   margin-top: 10px;
+}
+
+#title-div2 {
+  margin: 0;
 }
 
 #name-input, #location-input, #climb-elevation, #climb-grade, #climb-date {
@@ -235,12 +235,20 @@ textarea:active {
   border: 3px solid #fb8b24;
 }
 
+#select-climb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 0;
+}
+
 #select-climb > select {
   height: 20px;
   font-size: 12px;
   padding: 10px;
   font-family: warnock-pro,serif;
-  width: 100%;
+  width: 30%;
   margin-top: 0;
   border: 4px solid #0f4c5c;
   background-color: #9C3848;
@@ -254,18 +262,18 @@ textarea:active {
   align-self: center;
 }
 
-#add-climb-div > form {
-  align-self: start;
-}
-
-#add-climb-all > h1 {
-  align-self: center;
-}
-
 #add-climb-to-dropdown-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
+}
+
+#add-mtn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
 }
