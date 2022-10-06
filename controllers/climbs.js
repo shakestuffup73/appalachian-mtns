@@ -21,7 +21,7 @@ function newClimb(req, res) {
   const newClimb = new Climb()
 
   const date = newClimb.date
-  const dateClimbed = date.toISOString().slice(0, 4)
+  const dateClimbed = date.toISOString().slice(0, 8)
 
   req.body.owner = req.user.profile
   Climb.find({})
