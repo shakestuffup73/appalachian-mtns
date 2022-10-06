@@ -152,13 +152,6 @@ a {
   border-radius: 12%;
 }
 
-#add-skills-div {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 #add-skills-div > form {
   background-image: url('../media/images/ice1.jpg');
   background-size: cover;
@@ -167,7 +160,15 @@ a {
   padding: 10px;
   padding-left: 10px;
   color: #9C3848;
-  width: 90%;
+  width: 95%;
+  max-width: 400px;
+}
+
+#add-skills-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #add-skills-div > h2 {
