@@ -5,6 +5,10 @@ const Schema = mongoose.Schema
 const reviewSchema = new Schema({
   content: String,
   reviewer: { type: Schema.Types.ObjectId, ref: "Profile" },
+  date: {
+    type: Date,
+    required: true
+  },
 }, {
   timestamps: true,
 })
