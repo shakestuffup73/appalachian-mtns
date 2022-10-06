@@ -3,28 +3,30 @@
 <link rel="stylesheet" href="/stylesheets/profiles/index.css">
 <%- include('../partials/nav2') %>
 
-<h1> This is <%= profile.name %>'s Profile </h1>
-<h2>Climbs that <%= profile.name %>'s completed!</h2>
-
-<table id="climb-table">
-  <tbody>
-    <% profile.myClimbs.forEach(climb => { %>
-      <tr>
-        <td><%= climb.name %></td>
-        <td><%= climb.grade %></td>
-        <td>
-        <% if (isSelf) { %>
-        <form action="/profiles/<%= user.profile._id %>/deleteClimb/<%= climb._id %>?_method=DELETE" method="POST">
-          <button class="btn" type="submit">Delete Climb</button>
-        </form>
-        <% } %>
-      </td> 
-      </tr>
-      <div>
-    </div>
-    <% }) %> 
-  </tbody>
-</table>
+<main>
+  <div id="title-div">
+    <h2>Climbs that <%= profile.name %>'s completed!</h2>
+  </div>
+  <table id="climb-table">
+    <tbody>
+      <% profile.myClimbs.forEach(climb => { %>
+        <tr>
+          <td><%= climb.name %></td>
+          <td><%= climb.grade %></td>
+          <td><%= climb.location %></td>
+          <td>
+            <% if (isSelf) { %>
+              <form action="/profiles/<%= user.profile._id %>/deleteClimb/<%= climb._id %>?_method=DELETE" method="POST">
+              <button id="delete-climb-btn2" class="btn" type="submit">Delete Climb</button>
+              </form>
+            <% } %>
+          </td>
+        </tr>
+      <% }) %> 
+    </tbody>
+  </table>
+</div>
+</main>
 
 <h2>Partners that <%= profile.name %>'s climbed with!</h2>
 

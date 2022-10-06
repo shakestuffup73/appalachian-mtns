@@ -50,8 +50,16 @@
   left: 65px;
 }
 
-#add-partner-btn {
+#delete-partner-btn {
+  font-size: 13px;
+}
+
+#add-partner-btn, #delete-partner-btn {
   border-radius: 10px;
   border: 3px solid #9C3848;
   height: 30px;
+}
+
+#delete-climb-btn2 {
+  width: 100px;
 }
