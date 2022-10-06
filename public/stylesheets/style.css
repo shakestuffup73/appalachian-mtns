@@ -35,9 +35,9 @@ nav {
 }
 
 nav > a {
-  margin: 4px 6px;
+  margin: 15px 6px;
   text-decoration: none;
-  font-size: 10px;
+  font-size: 14px;
   display: flex;
   color:  #001233;
   align-items: center;
@@ -157,5 +157,25 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-left: 20px;
 }
+
+#add-skills-div > form {
+  background-image: url('../media/images/ice1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 4px solid #fb8b24;
+  padding: 10px;
+  padding-left: 10px;
+  color: #9C3848;
+  width: 90%;
+}
+
+#add-skills-div > h2 {
+  font-size: 26px;
+}
+
+#addGearSkillsForm > label {
+  font-size: 15px;
+}
+
+

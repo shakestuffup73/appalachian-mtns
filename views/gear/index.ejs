@@ -6,7 +6,7 @@
   <% if (user) { %>
   <div id="add-skills-div">
     <h2>Add Gear & Skills to your Profile!</h2>
-    <form action="/profiles/<%= user.profile._id %>/addGearSkills?_method=PATCH" method="POST" name="addGearSkills">
+    <form id="addGearSkillsForm" action="/profiles/<%= user.profile._id %>/addGearSkills?_method=PATCH" method="POST" name="addGearSkills">
       <label>
         <input type="checkbox" name="leadOnIce" autocomplete="off">
         Can you lead on ice?
@@ -91,8 +91,8 @@
       <button id="add-gear-btn" type="submit">Add Gear and Skills to Profile</button>
       </div>
     </form>
-    <% } %>  
-  </div>
+    <% } %>
+  </div>  
 </section>
 
 
