@@ -10,9 +10,18 @@ const reviewSchema = new Schema({
 })
 
 const climbSchema = new Schema({
-  name: String,
-  date: Date,
-  location: String,
+  name: {
+    type: String,
+    required: true
+  },
+  date: {
+    type: Date,
+    required: true
+  },
+  location: {
+    type: String,
+    required: true
+  },
   elevation: Number,
   grade: String,
   owner: { type: mongoose.Schema.Types.ObjectId, ref: 'Profile' },
