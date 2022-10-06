@@ -23,7 +23,7 @@ nav {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  font-size: 8px;
+  font-size: 10px;
 }
 
 label {
@@ -192,6 +192,8 @@ textarea:active {
 
 #add-gear-btn {
   margin-top: 20px;
+  width: 210px;
+  font-size: 18px;
 }
 
 #delete-btn {
@@ -217,6 +219,10 @@ textarea:active {
   align-items: center;
   margin-bottom: 10px;
   margin-top: 10px;
+}
+
+#add-skills-div > form {
+  font-size: 18px;
 }
 
 #title-div2 {
@@ -276,4 +282,12 @@ textarea:active {
   justify-content: center;
   align-items: center;
   margin: 5px;
+}
+
+#add-climbprofile-btn {
+  width: 95px;
+}
+
+#climb-table > tbody {
+  font-size: 18px;
 }

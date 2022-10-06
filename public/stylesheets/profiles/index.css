@@ -17,20 +17,22 @@
 
 .card {
   display: flex;
-  width: 210px;
+  align-items: center;
+  width: 160px;
+  height: 70px;
   position: relative;
   background-color: #001233;
   border: 2px solid  #fb8b24;
   border-radius: 10px;
   color: whitesmoke;
-  padding: 5px;
+  padding: 4px;
   margin-bottom: 10px;
 }
 
 .card > img {
   border-radius: 10px;
   border: 3px solid #0f4c5c;
-  height: 90px;
+  height: 50px;
 }
 
 .card-body {
@@ -40,14 +42,14 @@
 }
 
 .card-title {
-  font-size: 24px;
-  margin: 0 10px;
+  font-size: 16px;
+  margin: 0 8px;
 }
 
 .form-class {
   position: absolute;
-  top: 85px;
-  left: 65px;
+  top: 50px;
+  left: 96px;
 }
 
 #gear-skill-div-table {
@@ -66,13 +68,19 @@
 }
 
 #delete-partner-btn {
-  font-size: 13px;
+  font-size: 10px;
 }
 
 #add-partner-btn, #delete-partner-btn {
   border-radius: 10px;
   border: 3px solid #9C3848;
   height: 30px;
+}
+
+#add-partner-btn {
+  font-size: 12px;
+  height: 25px;
+  width: 70px;
 }
 
 #delete-climb-btn2 {

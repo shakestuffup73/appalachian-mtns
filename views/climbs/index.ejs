@@ -17,7 +17,7 @@
 
         <form action="/profiles/<%= user.profile._id %>/addClimb?_method=PATCH" method="POST" name="addClimbToList">
           <input type="text" name="id" hidden value="<%= climb._id %>">
-        <td><button type="submit">Add Climb</button></td>
+        <td><button id="add-climbprofile-btn" type="submit">Add to Profile</button></td>
         </form>
       </tr>
     <% }) %> 
