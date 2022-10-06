@@ -50,6 +50,15 @@
   left: 65px;
 }
 
+#climb-table {
+  margin: 0;
+}
+
+#title-div {
+  margin: 0;
+  padding: 0;
+}
+
 #delete-partner-btn {
   font-size: 13px;
 }

@@ -4,7 +4,7 @@
 <%- include('../partials/nav2') %>
 
 <main>
-  <div id="title-div">
+  <div id="title-div" class="title">
     <h2>Climbs that <%= profile.name %>'s completed!</h2>
   </div>
   <table id="climb-table">
@@ -16,7 +16,7 @@
           <td><%= climb.location %></td>
           <td>
             <% if (isSelf) { %>
-              <form action="/profiles/<%= user.profile._id %>/deleteClimb/<%= climb._id %>?_method=DELETE" method="POST">
+              <form id="delete-climb-form" action="/profiles/<%= user.profile._id %>/deleteClimb/<%= climb._id %>?_method=DELETE" method="POST">
               <button id="delete-climb-btn2" class="btn" type="submit">Delete Climb</button>
               </form>
             <% } %>
@@ -28,8 +28,9 @@
 </div>
 </main>
 
-<h2>Partners that <%= profile.name %>'s climbed with!</h2>
-
+<div id="title-div" class="title">
+  <h2>Partners who <%= profile.name %>'s climbed with!</h2>
+</div>
 <main class="main">
   <div class="card-container">
     <% profile.myPartners.forEach(partner => { %>
