@@ -1,176 +1,170 @@
 <%- include('../partials/html-head') %>
 <link rel="stylesheet" href="/stylesheets/climbs/index.css" />
+<link rel="stylesheet" href="/stylesheets/profiles/index.css">
 <%- include('../partials/nav2') %>
 
 <h1> This is <%= profile.name %>'s Profile </h1>
-
-  <h2>Climbs that <%= profile.name %>'s completed!</h2>
-
-  <table id="climb-table">
-    <tbody>
-      <% profile.myClimbs.forEach(climb => { %>
-        <tr>
-          <td><%= climb.name %></td>
-          <td><%= climb.grade %></td>
-          <td>
-          <% if (isSelf) { %>
-          <form action="/profiles/<%= user.profile._id %>/deleteClimb/<%= climb._id %>?_method=DELETE" method="POST">
-            <button class="btn" type="submit">Delete Climb</button>
-          </form>
-          <% } %>
-        </td> 
-        </tr>
-        <div>
-      </div>
-      <% }) %> 
-    </tbody>
-  </table>
-
-<h2>Partners that <%= profile.name %>'s climbed with!</h2>
+<h2>Climbs that <%= profile.name %>'s completed!</h2>
 
 <table id="climb-table">
   <tbody>
-    <% profile.myPartners.forEach(partner => { %>
+    <% profile.myClimbs.forEach(climb => { %>
       <tr>
-        <td> 
-          <div class="card">
-          <img 
-            src="<%= partner.avatar %>" 
-            alt="<%= partner.name %>'s avatar"
-          >
-        </td>
-        <td> 
-          <div class="card-body">
-            <h1 class="card-title"><%= partner.name %></h1>
-          </div>
-        </td>
+        <td><%= climb.name %></td>
+        <td><%= climb.grade %></td>
         <td>
-        <div>
-          <% if (isSelf) { %> 
-          <form action="/profiles/<%= user.profile._id %>/deletePartner/<%= partner._id %>?_method=DELETE" method="POST">
-            <button class="btn" type="submit">Delete Partner</button>
-          </form>
-          <% } %> 
-        </div>
-        </td>
-        </tr>
-      </div>
+        <% if (isSelf) { %>
+        <form action="/profiles/<%= user.profile._id %>/deleteClimb/<%= climb._id %>?_method=DELETE" method="POST">
+          <button class="btn" type="submit">Delete Climb</button>
+        </form>
+        <% } %>
+      </td> 
+      </tr>
+      <div>
+    </div>
     <% }) %> 
   </tbody>
 </table>
 
-<table id="gearSkills-table">
-  <tbody>
-  <% if (profile.myGearSkills?.length) { %>    
-    <ul>
-      <% profile.myGearSkills.forEach(myGearSkill => { %>
-      <td>
-        <tr>
-          Lead on Ice is: <%= myGearSkill.leadOnIce ? 'yes' : 'no' %>
-        </tr>
-      </td>
-      <br>
-      <td>
-        <tr>
-          Lead on Rock is: <%= myGearSkill.leadOnRock ? 'yes' : 'no' %>
-        </tr>
-      </td>
-      <br>
-        <td>
-          <tr>
-          Clean on Ice is: <%= myGearSkill.cleanOnIce ? 'yes' : 'no' %>
-          </tr>
-        </td>
-        <br>
-        <td>
-          <tr>
-          Clean on Rock is: <%= myGearSkill.cleanOnRock ? 'yes' : 'no' %>
-          </tr>
-        </td>
-        <br>
-        <td>
-          <tr>
-          Top Rope Ice is: <%= myGearSkill.topRopeIce ? 'yes' : 'no' %>
-          </tr>
-        </td>
-        <br>
-        <td>
-          <tr>
-          Top Rope Rock is: <%= myGearSkill.topRopeRock ? 'yes' : 'no' %>
-          </tr>
-        </td>
-        <br>
-        <td>
-          <tr>
-          Own a full ice rack?: <%= myGearSkill.fullIceRack ? 'yes' : 'no' %>
-          </tr>
-        </td>
-        <br>
-        <td>
-          <tr>
-          Own a full rock rack?: <%= myGearSkill.fullRockRack ? 'yes' : 'no' %>
-          </tr>
-        </td>
-        <br>
-        <td>
-          <tr>
-          Own a 60m dry rope?: <%= myGearSkill.dryRope60m ? 'yes' : 'no' %>
-          </tr>
-        </td>
-        <br>
-        <td>
-          <tr>
-          Own a 70m dry rope?: <%= myGearSkill.dryRope70m ? 'yes' : 'no' %>
-          </tr>
-        </td>
-        <br>
-        <td>
-          <tr>
-          Own half ropes?: <%= myGearSkill.halfRopes ? 'yes' : 'no' %>
-          </tr>
-        </td>
-        <br>
-        <td>
-          <tr>
-          Own ice tools?: <%= myGearSkill.iceTools ? 'yes' : 'no' %>
-          </tr>
-        </td>
-        <br>
-        <td>
-          <tr>
-          Own crampons?: <%= myGearSkill.crampons ? 'yes' : 'no' %>
-          </tr>
-        </td>
-        <br>
-        <td>
-          <tr>
-          Own & climb with a helmet?: <%= myGearSkill.helmet ? 'yes' : 'no' %>
-          </tr>
-        </td>
-        <br>
-        <td>
-          <tr>
-          Own harness?: <%= myGearSkill.harness ? 'yes' : 'no' %>
-          </tr>
-        </td>
-        <br>
-        <td>
-          <tr>
-          Have gear to outfit a beginner?: <%= myGearSkill.extraGear ? 'yes' : 'no' %>
-          </tr>
-        </td>
-        <br>
+<h2>Partners that <%= profile.name %>'s climbed with!</h2>
 
-        <% if (isSelf) { %> 
-          <form action="/profiles/<%= user.profile._id %>/deleteGearSkill/<%= myGearSkill._id %>?_method=DELETE" method="POST">
-            <button class="btn" type="submit">Delete Gear/Skills List</button>
+<main class="main">
+  <div class="card-container">
+    <% profile.myPartners.forEach(partner => { %>
+      <a class="text-decoration-none" href="/profiles/<%= partner._id %>">
+        <div class="card">
+          <form 
+            class="form-class"
+            action="/profiles/<%= user.profile._id %>/deletePartner/<%= partner._id %>?_method=DELETE" method="POST" 
+            name="deletePartner">
+
+            <input type="text" name="id" hidden value="<%= partner._id %>">
+            <div>
+              <button id="delete-partner-btn" type="submit">Delete Partner</button>
+            </div>
           </form>
-          <% } %>  
-      <% }) %>
-  <% } %>
+          <img 
+            src="<%= partner.avatar %>" 
+            alt="<%= partner.name %>'s avatar"
+          >
+          <div class="card-body">
+            <h1 class="card-title"><%= partner.name %></h1>
+          </div>
+        </div>
+      </a>
+    <% }) %>
+  </div>
+</main>
+
+<% if (profile.myGearSkills?.length) { %>    
+  
+  <% profile.myGearSkills.forEach(myGearSkill => { %>
+  <td>
+    <tr>
+      Lead on Ice is: <%= myGearSkill.leadOnIce ? 'yes' : 'no' %>
+    </tr>
+  </td>
+  <br>
+  <td>
+    <tr>
+      Lead on Rock is: <%= myGearSkill.leadOnRock ? 'yes' : 'no' %>
+    </tr>
+  </td>
+  <br>
+    <td>
+      <tr>
+      Clean on Ice is: <%= myGearSkill.cleanOnIce ? 'yes' : 'no' %>
+      </tr>
+    </td>
+    <br>
+    <td>
+      <tr>
+      Clean on Rock is: <%= myGearSkill.cleanOnRock ? 'yes' : 'no' %>
+      </tr>
+    </td>
+    <br>
+    <td>
+      <tr>
+      Top Rope Ice is: <%= myGearSkill.topRopeIce ? 'yes' : 'no' %>
+      </tr>
+    </td>
+    <br>
+    <td>
+      <tr>
+      Top Rope Rock is: <%= myGearSkill.topRopeRock ? 'yes' : 'no' %>
+      </tr>
+    </td>
+    <br>
+    <td>
+      <tr>
+      Own a full ice rack?: <%= myGearSkill.fullIceRack ? 'yes' : 'no' %>
+      </tr>
+    </td>
+    <br>
+    <td>
+      <tr>
+      Own a full rock rack?: <%= myGearSkill.fullRockRack ? 'yes' : 'no' %>
+      </tr>
+    </td>
+    <br>
+    <td>
+      <tr>
+      Own a 60m dry rope?: <%= myGearSkill.dryRope60m ? 'yes' : 'no' %>
+      </tr>
+    </td>
+    <br>
+    <td>
+      <tr>
+      Own a 70m dry rope?: <%= myGearSkill.dryRope70m ? 'yes' : 'no' %>
+      </tr>
+    </td>
+    <br>
+    <td>
+      <tr>
+      Own half ropes?: <%= myGearSkill.halfRopes ? 'yes' : 'no' %>
+      </tr>
+    </td>
+    <br>
+    <td>
+      <tr>
+      Own ice tools?: <%= myGearSkill.iceTools ? 'yes' : 'no' %>
+      </tr>
+    </td>
+    <br>
+    <td>
+      <tr>
+      Own crampons?: <%= myGearSkill.crampons ? 'yes' : 'no' %>
+      </tr>
+    </td>
+    <br>
+    <td>
+      <tr>
+      Own & climb with a helmet?: <%= myGearSkill.helmet ? 'yes' : 'no' %>
+      </tr>
+    </td>
+    <br>
+    <td>
+      <tr>
+      Own harness?: <%= myGearSkill.harness ? 'yes' : 'no' %>
+      </tr>
+    </td>
+    <br>
+    <td>
+      <tr>
+      Have gear to outfit a beginner?: <%= myGearSkill.extraGear ? 'yes' : 'no' %>
+      </tr>
+    </td>
   </tbody>
 </table>
-
-
+<div id="delete-gear-skills-div">
+  <% if (isSelf) { %> 
+    <form action="/profiles/<%= user.profile._id %>/deleteGearSkill/<%= myGearSkill._id %>?_method=DELETE" 
+      method="POST">
+      <button class="btn" type="submit">Delete Gear/Skills List</button>
+    </form>
+  <% } %>  
+<% }) %>
+<% } %>
+</div>
 
 <%- include('../partials/footer') %>
