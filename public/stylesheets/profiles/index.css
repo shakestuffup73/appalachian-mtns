@@ -9,7 +9,6 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
-  margin: 10px;
 }
 
 .text-decoration-none {
@@ -19,11 +18,13 @@
 .card {
   display: flex;
   width: 210px;
+  position: relative;
   background-color: #001233;
   border: 2px solid  #fb8b24;
   border-radius: 10px;
   color: whitesmoke;
   padding: 5px;
+  margin-bottom: 10px;
 }
 
 .card > img {
@@ -43,9 +44,14 @@
   margin: 0 10px;
 }
 
+.form-class {
+  position: absolute;
+  top: 85px;
+  left: 65px;
+}
+
 #add-partner-btn {
   border-radius: 10px;
   border: 3px solid #9C3848;
   height: 30px;
-  transform: translateX(-115px) translateY(40px);
 }

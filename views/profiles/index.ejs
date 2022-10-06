@@ -8,16 +8,24 @@
     <% profiles.forEach(profile => { %>
       <a class="text-decoration-none" href="/profiles/<%= profile._id %>">
         <div class="card">
+          <form 
+            class="form-class"
+            action="/profiles/<%= user.profile._id %>/addPartner?_method=PATCH" 
+            method="POST" 
+            name="addPartnerToList"
+          >
+
+            <input type="text" name="id" hidden value="<%= profile._id %>">
+            <div>
+              <button id="add-partner-btn" type="submit">Add Partner</button>
+            </div>
+          </form>
           <img 
             src="<%= profile.avatar %>" 
             alt="<%= profile.name %>'s avatar"
           >
           <div class="card-body">
             <h1 class="card-title"><%= profile.name %></h1>
-          <form action="/profiles/<%= user.profile._id %>/addPartner?_method=PATCH" method="POST" name="addPartnerToList">
-            <input type="text" name="id" hidden value="<%= profile._id %>">
-            <td><button id="add-partner-btn" type="submit">Add Partner</button></td>
-          </form>
           </div>
         </div>
       </a>
