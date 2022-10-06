@@ -35,9 +35,9 @@ nav {
 }
 
 nav > a {
-  margin: 15px 6px;
+  margin: 0px 6px;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 12px;
   display: flex;
   color:  #001233;
   align-items: center;
@@ -177,5 +177,4 @@ a {
 #addGearSkillsForm > label {
   font-size: 15px;
 }
-
 
