@@ -16,7 +16,6 @@ function index(req, res) {
 }
 
 function show (req, res) {
-  console.log('this is the show profile function!')
   Profile.findById(req.params.id)
   .populate('myClimbs')
   .populate('myPartners')
@@ -34,15 +33,10 @@ function show (req, res) {
 }
 
 function addClimbToList (req, res) {
-  console.log('this is the add climb to list function')
-
   Profile.findById(req.user.profile._id)
   .populate('myClimbs')
   .then (profile => {
-
-    console.log('this is req.body', req.body)
     profile.myClimbs.push(req.body.id)
-
     profile.save()
     .then (() => {
       res.redirect(`/profiles/${req.params.id}`)
@@ -55,12 +49,10 @@ function addClimbToList (req, res) {
 }
 
 function deleteClimb (req, res) {
-  console.log('this is the delete climb from list function')
   Profile.findById(req.params.id)
   .then (myProfile => {
     const index = myProfile.myClimbs.indexOf(req.params.climbId)
     myProfile.myClimbs.splice(index, 1)
-
     myProfile.save()
     .then (() => {
       res.redirect(`/profiles/${req.params.id}`)
@@ -69,15 +61,10 @@ function deleteClimb (req, res) {
 }
 
 function addPartnerToList(req, res) {
-  console.log('this is the add partner function!')
-
   Profile.findById(req.user.profile._id)
   .populate('myPartners')
   .then (profile => {
-
-    console.log('this is req.body', req.body)
     profile.myPartners.push(req.body.id)
-
     profile.save()
     .then (() => {
       res.redirect(`/profiles/${req.params.id}`)
@@ -90,12 +77,10 @@ function addPartnerToList(req, res) {
 }
 
 function deletePartner(req, res) {
-  console.log('this is the delete partner function!')
   Profile.findById(req.params.id)
   .then (myProfile => {
     const index = myProfile.myPartners.indexOf(req.params.partnerId)
     myProfile.myPartners.splice(index, 1)
-
     myProfile.save()
     .then (() => {
       res.redirect(`/profiles/${req.params.id}`)
@@ -104,18 +89,12 @@ function deletePartner(req, res) {
 }
 
 function addGearList (req, res) {
-  console.log('this is the add gearSkills to list function')
-
   Profile.findById(req.user.profile._id)
   .then (myProfile => {
-
     for (const prop in req.body) {
       req.body[prop]=!!req.body[prop]
     }
-
-    console.log('this is req.body in addGearList:', req.body)
     myProfile.myGearSkills.push(req.body)
-
     myProfile.save()
     .then (() => {
       res.redirect(`/profiles/${req.params.id}`)
@@ -128,12 +107,10 @@ function addGearList (req, res) {
 }
 
 function deleteGearSkill(req, res) {
-  console.log('this is the delete partner function!')
   Profile.findById(req.params.id)
   .then (myProfile => {
     const index = myProfile.myGearSkills.indexOf(req.params.gearSkillId)
     myProfile.myGearSkills.splice(index, 1)
-
     myProfile.save()
     .then (() => {
       res.redirect(`/profiles/${req.params.id}`)
