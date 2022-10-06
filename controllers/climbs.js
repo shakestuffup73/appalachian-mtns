@@ -42,6 +42,7 @@ function create (req, res) {
   req.body.owner = req.user.profile._id
   console.log('this is req.body', req.body)
   console.log('this is the create climb function')
+  req.body.elevation = req.body.elevation.replaceAll(',', '')
   Climb.create(req.body)
   .then(climb => {
     console.log('this is the climb being created', climb)
@@ -64,8 +65,7 @@ function show (req, res) {
     }
   })
   .then (climb => {
-    console.log('Climb data:', climb)
-
+   
     res.render('climbs/show', {
       title: 'Climb Details',
       climb: climb,
@@ -80,6 +80,7 @@ function show (req, res) {
 function createReview (req, res) {
   console.log('this is the create review function!')
   req.body.reviewer = req.user.profile._id
+
   console.log(req.body)
   Climb.findById(req.params.id)  
   .then (climb => {
@@ -87,10 +88,6 @@ function createReview (req, res) {
     climb.save()
     .then(() => {
       res.redirect(`/climbs/${climb._id}`)  
-    })
-    .catch(error => {
-      console.log(error)
-      res.redirect('/')
     })
   })
   .catch(error => {

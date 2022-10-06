@@ -7,7 +7,8 @@ const reviewSchema = new Schema({
   reviewer: { type: Schema.Types.ObjectId, ref: "Profile" },
   date: {
     type: Date,
-    required: true
+    default: new Date(),
+    required: true,
   },
 }, {
   timestamps: true,

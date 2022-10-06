@@ -36,7 +36,7 @@
           <br>
           by: <%= review.reviewer.name %>
           <br>
-          date: <%= review.date %>  
+          date: <%= review.date.toString().slice(0, 15) %>  
         </div>
       </tr>
       <br>
