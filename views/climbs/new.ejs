@@ -3,17 +3,24 @@
 <%- include('../partials/nav2') %>
 
 <main>
-  <h1> Add a Climb </h1>
+<div id="all-div2">
+  <div id="title-div2">
+    <h1> Add a Climb </h1>
+  </div>
   <div id="add-mtn">
     <br>
+  <div id="select-climb">
     <select>
     <% climbs.forEach(climb => { %>
       <option> <%= climb.name %> </option>
     <% }) %>
     </select>
+  </div>
+  <div id="add-climb-all">
     <div id="add-climb">
       <h1>Not seeing your climb in the drop-down? Add it to the list here!</h1>
     </div>
+    <div id="add-climb-div">
     <form id="add-climb-to-dropdown-form" action="/climbs" method="POST">
       <label for="climb-name">Name:</label>
       <input type="text" name="name" id="name-input">
@@ -27,11 +34,14 @@
       <label for="climb-grade">Grade:</label>
       <input type="text" name="grade" id="climb-grade">
       <br>
-      <label for="climb-date">Date Climbed:</label>
+      <label for="climb-date">Date:</label>
       <input type="text" name="date" id="climb-date">
-      <button type="submit">Add New Climb</button>
+      <button id="add-climb-btn" type="submit">Add New Climb</button>
+    </div>
     </form>
   </div>
+</div>
+</div>
 </main>
 
 

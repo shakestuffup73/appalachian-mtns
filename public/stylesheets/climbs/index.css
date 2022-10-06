@@ -1,11 +1,17 @@
 .main {
   display: flex;
   justify-content: center;
+  align-items: center;
+  margin: 20px;
+  padding: 20px;
 }
-
 
 table {
   margin: 20px;
+}
+
+input {
+  width: 50%;
 }
 
 td {
@@ -73,6 +79,10 @@ textarea:active {
 }
 
 #add-mtn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin: 20px;
 }
 
@@ -91,7 +101,7 @@ textarea:active {
   color: #002855;
 }
 
-#climb-details-title {
+#climb-details-title, #title-div2, #all-div {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -100,7 +110,7 @@ textarea:active {
   margin-top: 10px;
 }
 
-#climb-details-title > h1 {
+#climb-details-title > h1, #title-div2 {
   font-size: 56px;
   color: whitesmoke;
   text-shadow: 2px 2px #9C3848;
@@ -114,26 +124,27 @@ textarea:active {
   font-size: 28px;
 }
 
-#form-div {
+#form-div, #all-div2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-#add-review-div {
+#add-review-div, #add-climb-div {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  margin: 20px;
+  justify-content: left;
+  margin: 10px;
   font-size: 24px;
+  font-family: warnock-pro,serif;
 }
 
-#add-review-btn {
-  margin: 20px;
+#add-review-btn, #add-climb-btn {
+  margin-top: 30px;
   height: 40px;
-  width: 120px;
+  width: 100%;
 }
 
 #review-content {
@@ -142,7 +153,8 @@ textarea:active {
   justify-content: center;
   margin: 10px;
   margin-bottom: -50px;
-  padding: 20px;
+  padding: 30px;
+  font-family: warnock-pro,serif;
   font-size: 18px;
   border: 3px solid #fb8b24;
   width: 100%;
@@ -160,9 +172,12 @@ textarea:active {
   width: 100%;
 }
 
-#delete-btn, #edit-btn {
+#delete-btn, #edit-btn, #add-climb-btn {
   width: 100px;
-  height: 30px;
+}
+
+#add-climb-btn {
+  width: 100%;
 }
 
 #delete-btn {
@@ -186,4 +201,33 @@ textarea:active {
   align-items: center;
   margin-bottom: 10px;
   margin-top: 10px;
+}
+
+#name-input, #location-input, #climb-elevation, #climb-grade, #climb-date {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150%;
+  height: 40px;
+  font-size: 16px;
+  font-family: warnock-pro,serif;
+  border: 3px solid #fb8b24;
+}
+
+#select-climb, #add-climb-all {
+  width: 100%;
+  padding: 10px;
+}
+
+#select-climb > select {
+  width: 100%;
+  height: 60px;
+  font-size: 22px;
+  padding: 10px;
+  font-family: warnock-pro,serif;
+  border: 3px solid #fb8b24;
+}
+
+#add-climb-div > form {
+  align-self: start;
 }
