@@ -16,6 +16,7 @@ const climbSchema = new Schema({
   },
   date: {
     type: Date,
+    default: oneYearAgo(),
     required: true
   },
   location: {
@@ -29,6 +30,15 @@ const climbSchema = new Schema({
 }, {
   timestamps: true
 })
+
+
+function oneYearAgo(){
+  const today = new Date()
+  today.setFullYear(today.getFullYear() - 1)
+  return today
+}
+oneYearAgo();
+
 
 const Climb = mongoose.model('Climb', climbSchema)
 

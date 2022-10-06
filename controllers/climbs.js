@@ -17,11 +17,18 @@ function index (req, res) {
 
 function newClimb(req, res) {
   console.log('newClimb function responding!')
+
+  const newClimb = new Climb()
+
+  const date = newClimb.date
+  const dateClimbed = date.toISOString().slice(0, 4)
+
   req.body.owner = req.user.profile
   Climb.find({})
   .then(climbs => {
     res.render('climbs/new', {
       title: 'Add Climb',
+      dateClimbed,
       climbs: climbs,
     })
   })
