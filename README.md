@@ -4,7 +4,7 @@
 
 <i>
 New England Rock and Ice is a climbing database and community for New England's ice and rock climbers. In this app, users can:
-
+<br>
 <ul>
 <li>Create and edit climbs</li>
 <li>Add and edit their own reviews on climbs</li> 
