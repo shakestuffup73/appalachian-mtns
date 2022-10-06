@@ -11,7 +11,7 @@
   <div>Climb: <%= climb.name %></div>
   <div>Grade: <%= climb.grade %></div>
   <div>Location: <%= climb.location %></div>
-  <div>Date Climbed: <%= climb.date.toDateString() %></div>
+  <div>Date Submitted: <%= climb.date.toISOString().slice(0, 10) %></div>
 </div>
 <div id="edit-review-div">
   <form 
