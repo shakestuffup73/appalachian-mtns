@@ -43,7 +43,9 @@
 
             <input type="text" name="id" hidden value="<%= partner._id %>">
             <div>
+            <% if (isSelf) { %> 
               <button id="delete-partner-btn" type="submit">Delete Partner</button>
+            <% } %> 
             </div>
           </form>
           <img 
