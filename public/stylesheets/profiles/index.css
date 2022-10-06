@@ -50,6 +50,12 @@
   left: 65px;
 }
 
+#gear-skill-div-table {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 #climb-table {
   margin: 0;
 }
@@ -71,4 +77,9 @@
 
 #delete-climb-btn2 {
   width: 100px;
+}
+
+#delete-gearskills-btn {
+  width: 180px;
+  height: 40px;
 }

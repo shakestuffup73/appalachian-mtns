@@ -59,115 +59,124 @@
   </div>
 </main>
 
-<% if (profile.myGearSkills?.length) { %>    
+<main>
+<div id="title-div" class="title">
+  <h2><%= profile.name %>'s Gear and Skills!</h2>
+</div>
+<div id="gearskill-div-table">
+<tbody>
+<% if (profile.myGearSkills?.length) { %>
   
-  <% profile.myGearSkills.forEach(myGearSkill => { %>
-  <td>
+<% profile.myGearSkills.forEach(myGearSkill => { %>
+  <td></td> 
     <tr>
-      Lead on Ice is: <%= myGearSkill.leadOnIce ? 'yes' : 'no' %>
+      Lead on Ice -- <%= myGearSkill.leadOnIce ? 'yes' : 'no' %>
+    </tr>
+  </td><td>
+    <tr>
+      Lead on Ice is -- <%= myGearSkill.leadOnIce ? 'yes' : 'no' %>
     </tr>
   </td>
   <br>
   <td>
     <tr>
-      Lead on Rock is: <%= myGearSkill.leadOnRock ? 'yes' : 'no' %>
+      Lead on Rock is -- <%= myGearSkill.leadOnRock ? 'yes' : 'no' %>
     </tr>
   </td>
   <br>
     <td>
       <tr>
-      Clean on Ice is: <%= myGearSkill.cleanOnIce ? 'yes' : 'no' %>
+      Clean on Ice is -- <%= myGearSkill.cleanOnIce ? 'yes' : 'no' %>
       </tr>
     </td>
     <br>
     <td>
       <tr>
-      Clean on Rock is: <%= myGearSkill.cleanOnRock ? 'yes' : 'no' %>
+      Clean on Rock is -- <%= myGearSkill.cleanOnRock ? 'yes' : 'no' %>
       </tr>
     </td>
     <br>
     <td>
       <tr>
-      Top Rope Ice is: <%= myGearSkill.topRopeIce ? 'yes' : 'no' %>
+      Top Rope Ice is -- <%= myGearSkill.topRopeIce ? 'yes' : 'no' %>
       </tr>
     </td>
     <br>
     <td>
       <tr>
-      Top Rope Rock is: <%= myGearSkill.topRopeRock ? 'yes' : 'no' %>
+      Top Rope Rock is -- <%= myGearSkill.topRopeRock ? 'yes' : 'no' %>
       </tr>
     </td>
     <br>
     <td>
       <tr>
-      Own a full ice rack?: <%= myGearSkill.fullIceRack ? 'yes' : 'no' %>
+      Own a full ice rack? -- <%= myGearSkill.fullIceRack ? 'yes' : 'no' %>
       </tr>
     </td>
     <br>
     <td>
       <tr>
-      Own a full rock rack?: <%= myGearSkill.fullRockRack ? 'yes' : 'no' %>
+      Own a full rock rack? -- <%= myGearSkill.fullRockRack ? 'yes' : 'no' %>
       </tr>
     </td>
     <br>
     <td>
       <tr>
-      Own a 60m dry rope?: <%= myGearSkill.dryRope60m ? 'yes' : 'no' %>
+      Own a 60m dry rope? -- <%= myGearSkill.dryRope60m ? 'yes' : 'no' %>
       </tr>
     </td>
     <br>
     <td>
       <tr>
-      Own a 70m dry rope?: <%= myGearSkill.dryRope70m ? 'yes' : 'no' %>
+      Own a 70m dry rope? -- <%= myGearSkill.dryRope70m ? 'yes' : 'no' %>
       </tr>
     </td>
     <br>
     <td>
       <tr>
-      Own half ropes?: <%= myGearSkill.halfRopes ? 'yes' : 'no' %>
+      Own half ropes? -- <%= myGearSkill.halfRopes ? 'yes' : 'no' %>
       </tr>
     </td>
     <br>
     <td>
       <tr>
-      Own ice tools?: <%= myGearSkill.iceTools ? 'yes' : 'no' %>
+      Own ice tools? -- <%= myGearSkill.iceTools ? 'yes' : 'no' %>
       </tr>
     </td>
     <br>
     <td>
       <tr>
-      Own crampons?: <%= myGearSkill.crampons ? 'yes' : 'no' %>
+      Own crampons? -- <%= myGearSkill.crampons ? 'yes' : 'no' %>
       </tr>
     </td>
     <br>
     <td>
       <tr>
-      Own & climb with a helmet?: <%= myGearSkill.helmet ? 'yes' : 'no' %>
+      Own & climb with a helmet? -- <%= myGearSkill.helmet ? 'yes' : 'no' %>
       </tr>
     </td>
     <br>
     <td>
       <tr>
-      Own harness?: <%= myGearSkill.harness ? 'yes' : 'no' %>
+      Own harness? -- <%= myGearSkill.harness ? 'yes' : 'no' %>
       </tr>
     </td>
     <br>
     <td>
       <tr>
-      Have gear to outfit a beginner?: <%= myGearSkill.extraGear ? 'yes' : 'no' %>
+      Have gear to outfit a beginner? -- <%= myGearSkill.extraGear ? 'yes' : 'no' %>
       </tr>
     </td>
-  </tbody>
-</table>
-<div id="delete-gear-skills-div">
   <% if (isSelf) { %> 
     <form action="/profiles/<%= user.profile._id %>/deleteGearSkill/<%= myGearSkill._id %>?_method=DELETE" 
       method="POST">
-      <button class="btn" type="submit">Delete Gear/Skills List</button>
+      <button id="delete-gearskills-btn" class="btn" type="submit">Delete Gear/Skills List</button>
     </form>
-  <% } %>  
+  <% } %> 
 <% }) %>
-<% } %>
 </div>
+<% } %>
+</tbody>
+</main> 
 
 <%- include('../partials/footer') %>
