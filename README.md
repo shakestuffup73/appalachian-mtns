@@ -3,7 +3,7 @@
 <h3>ABOUT THE APP</h3>
 
 <i>
-New England Rock and Ice is a climbing database and community for New England's ice and rock climbers. In this app, users can create and edit climbs, add and edit their own reviews on climbs, add climbing partners, add gear and skills to their profile, delete partners from their profile. Users who created climbs can moderate the comment replies on their climbs with the permissions to delete irrelevant comments/reviews. The app requires a valid Google email address to log in and create a climber profile, as well as to view climbs.</i>
+New England Rock and Ice is a climbing database and community for New England's ice and rock climbers. In this app, users can create and edit climbs, add and edit their own reviews on climbs, add climbing partners to their profile, add gear and skills to their profile, and delete climbing partners from their profile. Users who created climbs can moderate the comment replies on their climbs with the permissions to delete irrelevant comments/reviews. The app requires a valid Google email address to log in and create a climber profile, as well as to view all the climbs.</i>
 <br>
 <br>
 <br>
@@ -14,6 +14,7 @@ LINK TO APP HERE:
 <br>
 
 ![App Screenshot](./media/database4.jpg)
+<br>
 
 ![App Screenshot](./media/database3.jpg)
 <br>
