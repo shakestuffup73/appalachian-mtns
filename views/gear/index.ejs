@@ -7,37 +7,37 @@
   <div id="add-skills-div">
     <h2>Add Gear & Skills to your Profile!</h2>
     <form id="addGearSkillsForm" action="/profiles/<%= user.profile._id %>/addGearSkills?_method=PATCH" method="POST" name="addGearSkills">
-      <label>
+      <label class="container">
         <input type="checkbox" name="leadOnIce" autocomplete="off">
         Can you lead on ice?
       </label>
       <br>
-      <label>
+      <label class="container">
         <input type="checkbox" name="leadMixed">
         Can you lead mixed climbs?
       </label>
       <br>
-      <label>
+      <label class="container">
         <input type="checkbox" name="cleanOnIce">
         Can you clean on ice?
       </label>
       <br>
-      <label>
+      <label class="container">
         <input type="checkbox" name="cleanOnRock">
         Can you clean on rock?
       </label>
       <br>
-      <label>
+      <label class="container">
         <input type="checkbox" name="topRopeOnIce">
         Do you top-rope on ice?
       </label>
       <br>
-      <label>
+      <label class="container">
         <input type="checkbox" name="topRopeOnRock">
         Do you top-rope on rock?
       </label>
       <br>
-      <label>
+      <label class="container">
         <input type="checkbox" name="fullIceRack">
         Do you own a full ice rack?
       </label>
@@ -47,48 +47,48 @@
         Do you own a full rock rack?
       </label>
       <br>
-      <label>
-        <input type="checkbox" name="dryRope60m">
+      <label class="container">
+        <input checked="checked" type="checkbox" name="dryRope60m">
         Do you own a 60m dry rope?
       </label>
       <br>
-      <label>
-        <input type="checkbox" name="dryRope70m">
+      <label class="container">
+        <input  type="checkbox" name="dryRope70m">
         Do you own a 70m dry rope?
       </label>
       <br>
-      <label>
-        <input type="checkbox" name="halfRopes">
+      <label class="container">
+        <input checked="checked" type="checkbox" name="halfRopes">
         Do you own half ropes?
       </label>
       <br>
-      <label>
+      <label class="container">
         <input type="checkbox" name="iceTools">
         Do you own ice tools?
       </label>
       <br>
-      <label>
+      <label class="container">
         <input type="checkbox" name="crampons">
         Do you own crampons?
       </label>
       <br>
-      <label>
+      <label class="container">
         <input type="checkbox" name="helmet">
         Do you own & climb with a helmet?
       </label>
       <br>
-      <label>
+      <label class="container">
         <input type="checkbox" name="harness">
         Do you have your own harness?
       </label>
       <br>
-      <label>
+      <label class="container">
         <input type="checkbox" name="extraGear">
         Do you have extra gear to outfit a beginner?
       </label>
       <br>
       <div id="gearskills-div">
-      <button id="add-gear-btn" type="submit">Add Gear and Skills to Profile</button>
+      <button class="btn" id="add-gear-btn" type="submit">Add Gear and Skills to Profile</button>
       </div>
     </form>
     <% } %>

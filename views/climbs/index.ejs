@@ -7,7 +7,7 @@
   <h1>This Season's Climbs</h1>
 </div>
 <table id="climb-table">
-  <tbody>
+  <tbody id="climb-table-body">
     <% climbs.forEach(climb => { %>
       <tr>
         <td><%= climb.name %></td>
@@ -17,7 +17,7 @@
 
         <form action="/profiles/<%= user.profile._id %>/addClimb?_method=PATCH" method="POST" name="addClimbToList">
           <input type="text" name="id" hidden value="<%= climb._id %>">
-        <td><button id="add-climbprofile-btn" type="submit">Add to Profile</button></td>
+        <td><button class="btn" id="add-climbprofile-btn" type="submit">Add to Profile</button></td>
         </form>
       </tr>
     <% }) %> 

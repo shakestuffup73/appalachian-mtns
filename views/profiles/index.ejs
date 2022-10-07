@@ -4,7 +4,13 @@
 <%- include('../partials/nav2') %>
 
 <main class="main">
-  <div class="card-container">
+<div id="belayshionship">
+  <h1>Got a belayshionship going on?</h1>
+  <h3>Add your climbing partners to your climbing profile...and then passive-aggressively delete them if they short-rope you one-too-many times</h3>
+  <h4><i>It's like your MySpace Top 8...but for climbing</i></h4>
+</div>
+
+  <div class="card-container" id="card-container">
     <% profiles.forEach(profile => { %>
       <a class="text-decoration-none" href="/profiles/<%= profile._id %>">
         <div class="card">

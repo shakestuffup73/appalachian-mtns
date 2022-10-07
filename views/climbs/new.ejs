@@ -5,7 +5,7 @@
 <main>
 <div id="all-div2">
   <div id="title-div2">
-    <h1> Add a Climb </h1>
+    <h1> Add a Climb for this Season </h1>
   </div>
   <div id="add-mtn">
     <br>
@@ -28,15 +28,15 @@
       <label for="climb-name">Location:</label>
       <input type="text" name="location" id="location-input">
       <br>
-      <label for="climb-elevation">Elevation:</label>
+      <label for="climb-elevation">Elevation (if you know it):</label>
       <input type="text" name="elevation" id="climb-elevation">
       <br>
-      <label for="climb-grade">Grade:</label>
+      <label for="climb-grade">Grade (WI 1-6, M1-6, 5.0+) or Rating (Easy, Med, Hard, I Died):</label>
       <input type="text" name="grade" id="climb-grade">
       <br>
       <label for="climb-date">Date:</label>
       <input type="datetime-local" name="date" id="climb-date" value="<%= dateClimbed %>">
-      <button id="add-climb-btn" type="submit">Add New Climb</button>
+      <button class="btn" id="add-climb-btn" type="submit">Add New Climb</button>
     </div>
     </form>
   </div>

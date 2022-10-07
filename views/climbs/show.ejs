@@ -21,7 +21,7 @@
       <label for="review-box">Have you climbed <%= climb.name %>? Leave a review!</label>
       <br>
       <textarea rows="5" cols="50" name="content" type="text"></textarea>
-      <button type="submit" id="add-review-btn">Add Review</button>
+      <button class="btn" type="submit" id="add-review-btn">Add Review</button>
     </div>
     </form>
   </div>
@@ -43,12 +43,12 @@
       <div id="update-review-div">
       <% if (user.profile._id.equals(climb.owner._id) || user.profile._id.equals(review.reviewer._id)) { %>
         <form action="/climbs/<%= climb._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
-          <button id="delete-btn" type="submit">Delete Review</button>
+          <button class="btn" id="delete-btn" type="submit">Delete Review</button>
         </form>
       <% } %>
       <% if (user.profile._id.equals(review.reviewer._id)) { %>
         <a href="/climbs/<%= climb._id %>/reviews/<%= review._id %>/edit">
-          <button id="edit-btn">Edit Review</button>
+          <button class="btn" id="edit-btn">Edit Review</button>
         </a>
       <% } %>
       </div>

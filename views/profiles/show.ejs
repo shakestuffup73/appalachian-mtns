@@ -5,7 +5,7 @@
 
 <main>
   <div id="title-div" class="title">
-    <h2>Climbs that <%= profile.name %>'s completed!</h2>
+    <h2><%= profile.name %> survived these climbs</h2>
   </div>
   <table id="climb-table">
     <tbody>
@@ -29,7 +29,7 @@
 </main>
 
 <div id="title-div" class="title">
-  <h2>Partners who <%= profile.name %>'s climbed with!</h2>
+  <h2>and is in a belayshionship with:</h2>
 </div>
 <main class="main">
   <div class="card-container">
@@ -44,7 +44,7 @@
             <input type="text" name="id" hidden value="<%= partner._id %>">
             <div>
             <% if (isSelf) { %> 
-              <button id="delete-partner-btn" type="submit">Delete Partner</button>
+              <button class="btn" id="delete-partner-btn" type="submit">Delete Partner</button>
             <% } %> 
             </div>
           </form>
@@ -61,7 +61,7 @@
   </div>
 </main>
 
-<main>
+<div id="gearAndSkills">
 <div id="title-div" class="title">
   <h2><%= profile.name %>'s Gear and Skills!</h2>
 </div>
@@ -175,6 +175,6 @@
 </div>
 <% } %>
 </tbody>
-</main> 
+</div> 
 
 <%- include('../partials/footer') %>
