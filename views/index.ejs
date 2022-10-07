@@ -1,26 +1,27 @@
 <%- include('./partials/html-head') %>
 <link rel="stylesheet" href="/stylesheets/landing.css" />
-<%- include('./partials/nav') %>
-
+<%- include ('./partials/nav') %> 
 
 <main>
   <div id="index-page-div">
+  <div id="landing-page-div">
   <div id="ice-tools-logo">
     <img src="/media/images/IceToolsLogo1.png" alt="ice-tools-logo">
   </div>
   <div id="title-div">
     <h1>New England Rock & Ice</h1>
   </div>
-  <div id="welcome-name">
-    <% if (user?.profile.avatar) { %>
-    <div id="welcome">
-      <h2>Welcome back, <%= user.profile.name %></h2>
-    </div>
-    <div id="go-to-profile">
-      <a href="/profiles/<%= user.profile._id %>">Go To Your Profile</a>
-    </div>
-  <% } %>
+</div>
+</div>
+<div id="welcome-name">
+  <% if (user?.profile.avatar) { %>
+  <div id="welcome">
+    <h2>Welcome back, <%= user.profile.name %></h2>
   </div>
+  <div id="go-to-profile">
+    <a href="/profiles/<%= user.profile._id %>">Go To Your Profile</a>
+  </div>
+<% } %>
 </div>
 </main>
 
