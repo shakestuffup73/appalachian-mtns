@@ -22,16 +22,19 @@ LINK TO APP HERE:
 <br>
 <br>
 
-![App Screenshot](./public/media/database4.jpg)
+![App Screenshot](./public/media/screenshot4.jpg)
 <br>
 
-![App Screenshot](./public/media/database3.jpg)
+![App Screenshot](./public/media/screenshot1.jpg)
 <br>
 
-![App Screenshot](./public/media/database1.jpg)
+![App Screenshot](./public/media/screenshot2.jpg)
 <br>
 
-![App Screenshot](./public/media/database2.jpg)
+![App Screenshot](./public/media/screenshot3.jpg)
+<br>
+
+![App Screenshot](./public/media/screenshot5.jpg)
 <br>
 
 <h3>Technologies Used</h3>
