@@ -82,6 +82,8 @@ LINK TO APP HERE:
 
 <h2>Planning Materials</h2>
 
+<a href="https://trello.com/b/qJ7ca6bM/appalachian-mtns-tracker">Trello Board</a>
+
 ![App Screenshot](./public/media/trello.jpg)
 <br>
 
