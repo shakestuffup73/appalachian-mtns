@@ -16,8 +16,6 @@ New England Rock and Ice is a climbing database and community for New England's 
 Additionally, users who create climbs can moderate the replies on their climbs with permission to delete irrelevant comments/reviews. The app requires a Google account to log in, create a climber profile, and view all the climbs.
 <br>
 <br>
-The app requires a valid Google email address to log in and create a climber profile, as well as to view all the climbs.</i>
-<br>
 <br>
 LINK TO APP HERE:
 <br>
