@@ -111,6 +111,11 @@ textarea:active {
   text-shadow: 2px 2px #9C3848;
 }
 
+#add-climb {
+  max-width: 310px;
+  margin: 0;
+}
+
 #climb-details-div {
   display: flex;
   flex-direction: column;
@@ -125,6 +130,7 @@ textarea:active {
   justify-content: center;
   align-items: center;
   margin-bottom: 30px;
+  max-width: 340px;
 }
 
 #add-review-div, #add-climb-div {
@@ -133,13 +139,16 @@ textarea:active {
   align-items: center;
   justify-content: left;
   margin: 10px;
-  font-size: 16px;
+  font-size: 14px;
   font-family: warnock-pro,serif;
 }
 
-#add-climb-div {
-  font-size: 12px;
-  margin: 0;
+#add-climb-all {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 #add-gear-btn {
@@ -160,6 +169,8 @@ textarea:active {
   font-size: 12px;
   border: 3px solid #fb8b24;
   width: 80%;
+  background-color:  #002855;
+  box-shadow: 0px 1px 16px 1px  #0096c7;
 }
 
 #edit-review-div {
