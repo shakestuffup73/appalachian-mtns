@@ -14,6 +14,7 @@ New England Rock and Ice is a climbing database and community for New England's 
 <li>Delete climbing partners from their profile</li>
 </ul>
 Additionally, users who create climbs can moderate the replies on their climbs with permission to delete irrelevant comments/reviews. The app requires a Google account to log in, create a climber profile, and view all the climbs.
+</i>
 <br>
 <br>
 <br>
@@ -76,9 +77,9 @@ LINK TO APP HERE:
   <li>Implement Admin functionality</li>
 </ul>
 <br>
-<i>Please see the following .jpg file to review the planning flowchart for building the New England Rock & Ice App.
+<i>Please see the following .jpg file to review the planning flowchart for building the New England Rock & Ice App.</i>
 
-<h2>Planning Materials</h2>
+<h3>Planning Materials</h3>
 
 <a href="https://trello.com/b/qJ7ca6bM/appalachian-mtns-tracker">Trello Board</a>
 
